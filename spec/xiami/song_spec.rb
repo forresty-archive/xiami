@@ -9,6 +9,10 @@ module Xiami
     it { should respond_to :local_file_path }
     it { should respond_to :local_file_path= }
 
+    it { should respond_to :title }
+    it { should respond_to :artist_name }
+    it { should respond_to :album_name }
+
     describe '#new' do
       it 'parses data' do
         song = Song.new('http://www.xiami.com/song/1773357685')

@@ -24,6 +24,18 @@ module Xiami
       self.id == another.id
     end
 
+    def title
+      name
+    end
+
+    def artist_name
+      artist.name
+    end
+
+    def album_name
+      album.name
+    end
+
     def parse_info!
       doc  = Nokogiri::XML(info_xml)
 
