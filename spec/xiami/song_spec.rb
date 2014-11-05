@@ -11,22 +11,22 @@ module Xiami
 
     describe '#new' do
       it 'parses data' do
-        song = Song.new('http://www.xiami.com/song/3495768')
+        song = Song.new('http://www.xiami.com/song/1773357685')
 
-        song.temporary_url.should == 'http://m5.file.xiami.com/104/5104/315098/3495768_10729341_l.mp3?auth_key=4b470a652c4457234e9dabb80a90b8ba-1414454400-0-null'
+        song.temporary_url.should == 'http://m5.file.xiami.com/516/37516/705574889/1773357685_15603838_l.mp3?auth_key=33b783883a2ffa9e9df48e5dd456ebad-1415232000-0-null'
 
-        song.album.id.should == '315098'
-        song.album.name.should == 'My Life + Best'
-        song.album.cover_url.should == 'http://img.xiami.net/images/album/img4/5104/3150981231826033_3.jpg'
+        song.album.id.should == '705574889'
+        song.album.name.should == 'Guardians of the Galaxy'
+        song.album.cover_url.should == 'http://img.xiami.net/images/album/img16/37516/7055748891405574890_3.jpg'
 
-        song.artist.id.should == '5104'
-        song.artist.name.should == '이선희'
+        song.artist.id.should == '37516'
+        song.artist.name.should == 'Rupert Holmes'
       end
 
-      it 'accepts song id' do
-        song = Song.new('3495768')
+      it 'accepts song id as well' do
+        song = Song.new('1773357685')
 
-        song.album.id.should == '315098'
+        song.album.id.should == '705574889'
       end
     end
 
