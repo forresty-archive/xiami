@@ -19,6 +19,11 @@ module Xiami
 
         song.temporary_url.should == 'http://m5.file.xiami.com/516/37516/705574889/1773357685_15603838_l.mp3?auth_key=33b783883a2ffa9e9df48e5dd456ebad-1415232000-0-null'
 
+        song.name.should == 'Escape (The Pina Colada Song)'
+        song.title.should == 'Escape (The Pina Colada Song)'
+        song.artist_name.should == 'Rupert Holmes'
+        song.album_name.should == 'Guardians of the Galaxy'
+
         song.album.id.should == '705574889'
         song.album.name.should == 'Guardians of the Galaxy'
         song.album.cover_url.should == 'http://img.xiami.net/images/album/img16/37516/7055748891405574890_3.jpg'
