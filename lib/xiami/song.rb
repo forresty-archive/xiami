@@ -40,17 +40,17 @@ module Xiami
       doc  = Nokogiri::XML(info_xml)
 
       @id = doc.at_css('track song_id').content
-      @name = doc.at_css('track song_name').content
+      @name = CGI.unescapeHTML(doc.at_css('track song_name').content)
 
       @album = Album.new.tap do |album|
         album.id = doc.at_css('track album_id').content
-        album.name = doc.at_css('track album_name').content
+        album.name = CGI.unescapeHTML(doc.at_css('track album_name').content)
         album.cover_url = doc.at_css('track album_cover').content
       end
 
       @artist = Artist.new.tap do |artist|
         artist.id = doc.at_css('track artist_id').content
-        artist.name = doc.at_css('track artist_name').content
+        artist.name = CGI.unescapeHTML(doc.at_css('track artist_name').content)
       end
 
       @temporary_url = sospa(doc.at_css('track location').content)

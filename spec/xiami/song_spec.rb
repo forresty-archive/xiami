@@ -37,6 +37,13 @@ module Xiami
 
         song.album.id.should == '705574889'
       end
+
+      context 'when html' do
+        it 'unescapes' do
+          song = Song.new(1242697)
+          song.album.name.should == "(What's the Story) Morning Glory?"
+        end
+      end
     end
 
     describe '#==' do
