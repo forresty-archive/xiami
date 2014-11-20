@@ -1,6 +1,6 @@
 # originally from xiami_sauce gem
+require "httpclient"
 require "cgi"
-require 'net/http'
 require 'nokogiri'
 
 module Xiami
@@ -38,6 +38,7 @@ module Xiami
 
     def parse_info!
       doc  = Nokogiri::XML(info_xml)
+      puts "length of the xml: #{info_xml.length}"
 
       @id = doc.at_css('track song_id').content
       @name = CGI.unescapeHTML(doc.at_css('track song_name').content)
@@ -59,11 +60,7 @@ module Xiami
     private
 
     def info_xml
-      uri  = URI.parse("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}")
-
-      headers = { 'accept' => 'text/html', 'user-agent' => 'Mozilla/5.0' }
-
-      Net::HTTP.new(uri.host, uri.port).get2(uri.path, headers).body
+      HTTPClient.new.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
     end
 
     def sospa(location)
