@@ -38,7 +38,6 @@ module Xiami
 
     def parse_info!
       doc  = Nokogiri::XML(info_xml)
-      puts "length of the xml: #{info_xml.length}"
 
       @id = doc.at_css('track song_id').content
       @name = CGI.unescapeHTML(doc.at_css('track song_name').content)
