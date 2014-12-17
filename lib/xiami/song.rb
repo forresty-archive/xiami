@@ -10,6 +10,14 @@ module Xiami
 
     attr_accessor :local_file_path
 
+    class << self
+      def fetch(song_url = nil)
+        new(song_url)
+      rescue
+        nil
+      end
+    end
+
     def initialize(song_url = nil)
       if song_url
         @id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
