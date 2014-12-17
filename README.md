@@ -43,3 +43,9 @@ Xiami::Song.new 42951
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Changelog
+
+### 0.1.0 / 2014-12-17
+
+- new `Song.fetch` method, will return nil when failed
