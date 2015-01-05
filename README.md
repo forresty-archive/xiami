@@ -62,6 +62,10 @@ Then it will parse the HTML page [http://www.xiami.com/song/42951](http://www.xi
 
 ## Changelog
 
+### 0.1.1 / 2015-01-05
+
+- Xiami.fetch_large_album_art
+
 ### 0.1.0 / 2014-12-17
 
 - new `Song.fetch` method, will return nil when failed
