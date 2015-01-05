@@ -53,7 +53,13 @@ module Xiami
       @album = Album.new.tap do |album|
         album.id = doc.at_css('track album_id').content
         album.name = CGI.unescapeHTML(doc.at_css('track album_name').content)
-        album.cover_url = doc.at_css('track album_cover').content
+
+        # using hack at this moment
+        if Xiami.fetch_large_album_art
+          album.cover_url = doc.at_css('track album_cover').content.gsub(/(3\.jpg)$/, '4.jpg')
+        else
+          album.cover_url = doc.at_css('track album_cover').content
+        end
       end
 
       @artist = Artist.new.tap do |artist|

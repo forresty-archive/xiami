@@ -44,6 +44,14 @@ module Xiami
           song.album.name.should == "(What's the Story) Morning Glory?"
         end
       end
+
+      context 'when fetch large album art' do
+        it 'fetches' do
+          Xiami.fetch_large_album_art = true
+
+          Song.new(1242697).album.cover_url.should == 'http://img.xiami.net/images/album/img1/10401/557231384238290_4.jpg'
+        end
+      end
     end
 
     describe '#==' do
