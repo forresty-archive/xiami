@@ -44,9 +44,9 @@ If larger album art is desired, you can set
 Xiami.fetch_large_album_art = true
 ```
 
-Then it will parse the HTML page [http://www.xiami.com/song/42951](http://www.xiami.com/song/42951) and retrieve a larger album art (roughly 184x184)
+Then it will utilize the URL pattern in album art and retrieve a larger album art (often over 500x500)
 
-![http://img.xiami.net/images/album/img24/724/34881343112513_2.jpg](http://img.xiami.net/images/album/img24/724/34881343112513_2.jpg)
+![http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg](http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg)
 
 ## Credits
 
