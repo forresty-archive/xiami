@@ -80,7 +80,7 @@ module Xiami
           it 'pass' do
             song = Song.new(1770769001)
             song.artist.id.should == nil
-            song.artist.name.should == nil
+            song.artist.name.should == '梁博'
           end
         end
       end

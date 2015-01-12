@@ -87,8 +87,13 @@ module Xiami
 
       @artist = Artist.new.tap do |artist|
         artist_node = doc.at_css('#albums_info').css('a').select { |a| a['href'] =~ /^\/artist\/(\d+)/ }.first
-        artist.id = artist_node['href'].match(/^\/artist\/(\d+)/)[1].to_i rescue nil
-        artist.name = artist_node.content rescue nil
+        if artist_node
+          artist.id = artist_node['href'].match(/^\/artist\/(\d+)/)[1].to_i rescue nil
+          artist.name = artist_node.content rescue nil
+        else
+          artist_node = doc.at_css('#albums_info').css('a').select { |a| a['href'] =~ /search/ }.first
+          artist.name = artist_node.content rescue nil
+        end
       end
 
       @temporary_url = nil
