@@ -22,7 +22,7 @@ module Xiami
       if song_url
         @id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
 
-        parse_info!
+        parse_xml_info! rescue parse_html_page!
       end
     end
 
@@ -44,14 +44,14 @@ module Xiami
       album.name
     end
 
-    def parse_info!
+    def parse_xml_info!
       doc  = Nokogiri::XML(info_xml)
 
-      @id = doc.at_css('track song_id').content
+      @id = doc.at_css('track song_id').content.to_i
       @name = CGI.unescapeHTML(doc.at_css('track song_name').content)
 
       @album = Album.new.tap do |album|
-        album.id = doc.at_css('track album_id').content
+        album.id = doc.at_css('track album_id').content.to_i
         album.name = CGI.unescapeHTML(doc.at_css('track album_name').content)
 
         # using hack at this moment
@@ -63,14 +63,42 @@ module Xiami
       end
 
       @artist = Artist.new.tap do |artist|
-        artist.id = doc.at_css('track artist_id').content
+        artist.id = doc.at_css('track artist_id').content.to_i
         artist.name = CGI.unescapeHTML(doc.at_css('track artist_name').content)
       end
 
       @temporary_url = sospa(doc.at_css('track location').content)
     end
 
+    def parse_html_page!
+      doc = Nokogiri::HTML(html_page)
+
+      @name = doc.at_css('#title h1').content
+
+      @album = Album.new.tap do |album|
+        album.id = doc.at_css('#albumCover')['href'].match(/album\/(\d+)/)[1].to_i
+        album.name = doc.at_css('#albumCover')['title']
+        if Xiami.fetch_large_album_art
+          album.cover_url = doc.at_css('.cdCDcover185')['src'].gsub(/(2\.jpg)$/, '4.jpg')
+        else
+          album.cover_url = doc.at_css('.cdCDcover185')['src']
+        end
+      end
+
+      @artist = Artist.new.tap do |artist|
+        artist_node = doc.at_css('#albums_info').css('a').select { |a| a['href'] =~ /^\/artist\/(\d+)/ }.first
+        artist.id = artist_node['href'].match(/^\/artist\/(\d+)/)[1].to_i
+        artist.name = artist_node.content
+      end
+
+      @temporary_url = nil
+    end
+
     private
+
+    def html_page
+      HTTPClient.new.get("http://www.xiami.com/song/#{id}").body
+    end
 
     def info_xml
       HTTPClient.new.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
