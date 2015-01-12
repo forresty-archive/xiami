@@ -62,6 +62,10 @@ Then it will utilize the URL pattern in album art and retrieve a larger album ar
 
 ## Changelog
 
+### 0.1.2 / 2015-01-12
+
+- parse HTML when XML fails
+
 ### 0.1.1 / 2015-01-05
 
 - Xiami.fetch_large_album_art
