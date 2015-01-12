@@ -71,6 +71,10 @@ Xiami::Song.new 42951
 
 ## Changelog
 
+### 0.2.0 / 2015-01-12
+
+- fetch all available album arts and default to the largest one
+
 ### 0.1.4 / 2015-01-12
 
 - fetch largest album art available
