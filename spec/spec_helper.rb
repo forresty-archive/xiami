@@ -17,8 +17,4 @@ include WebMock::API
 
 pattern = /http:\/\/www\.xiami\.com\/widget\/xml-single\/uid\/0\/sid\/(\d+)/
 
-result = lambda do |request|
-  { body: fixture(request.uri.path.match(/(\d+)$/)[0]) }
-end
-
-stub_request(:any, pattern).to_return(result)
+stub_request(:any, pattern).to_return(lambda { |request| { body: fixture('songs/' + request.uri.path.match(/(\d+)$/)[0]) } })
