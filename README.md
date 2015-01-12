@@ -29,22 +29,31 @@ Or install it yourself as:
 
 ```ruby
 Xiami::Song.new 42951
-=> #<Xiami::Song:0x007f8f35c43b48 @id="42951", @name="我爱台妹", @album=#<Xiami::Album:0x007f8f35c63560 @id="3488", @name="Wake Up", @cover_url="http://img.xiami.net/images/album/img24/724/34881343112513_3.jpg">, @artist=#<Xiami::Artist:0x007f8f35c79cc0 @id="724", @name="MC HotDog;张震岳">, @temporary_url="http://m5.file.xiami.com/724/724/3488/42951_28196_l.mp3?auth_key=77abde259cd6566a5c4222b4cca7331c-1416441600-0-null">
+
+#<Xiami::Song:0x007fc85aad82a0
+ @album=
+  #<Xiami::Album:0x007fc85aaf0418
+   @cover_url=
+    "http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg",
+   @cover_urls=
+    [{:url=>"http://img.xiami.net/images/album/img24/724/34881343112513_1.jpg",
+      :size=>[100, 100]},
+     {:url=>"http://img.xiami.net/images/album/img24/724/34881343112513_2.jpg",
+      :size=>[152, 185]},
+     {:url=>"http://img.xiami.net/images/album/img24/724/34881343112513_3.jpg",
+      :size=>[55, 55]},
+     {:url=>"http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg",
+      :size=>[528, 640]},
+     {:url=>"http://img.xiami.net/images/album/img24/724/34881343112513_5.jpg",
+      :size=>[185, 185]}],
+   @id=3488,
+   @name="Wake Up">,
+ @artist=#<Xiami::Artist:0x007fc85ab6afb0 @id=724, @name="MC HotDog;张震岳">,
+ @id=42951,
+ @name="我爱台妹",
+ @temporary_url=
+  "http://m5.file.xiami.com/724/724/3488/42951_28196_l.mp3?auth_key=8ce0466ab660aa7d2f35d914f8cdfc67-1421193600-0-null">
 ```
-
-Album art fetched in this way will be small (roughly 55x55) as it was retrieved from
-
-[http://www.xiami.com/widget/xml-single/uid/0/sid/42951](http://www.xiami.com/widget/xml-single/uid/0/sid/42951)
-
-![http://img.xiami.net/images/album/img24/724/34881343112513_3.jpg](http://img.xiami.net/images/album/img24/724/34881343112513_3.jpg)
-
-If larger album art is desired, you can set
-
-```ruby
-Xiami.fetch_large_album_art = true
-```
-
-Then it will utilize the URL pattern in album art and retrieve a larger album art (often over 500x500)
 
 ![http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg](http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg)
 

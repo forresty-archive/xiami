@@ -4,5 +4,6 @@ module Xiami
   describe Album do
     it { should respond_to :name }
     it { should respond_to :id }
+    it { should respond_to :cover_urls }
   end
 end

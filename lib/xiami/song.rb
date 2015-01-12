@@ -57,7 +57,7 @@ module Xiami
 
         album.cover_url = doc.at_css('track album_cover').content
       end
-      fetch_largest_album_art! if Xiami.fetch_large_album_art
+      fetch_all_album_arts!
 
       @artist = Artist.new.tap do |artist|
         artist.id = doc.at_css('track artist_id').content.to_i
@@ -78,7 +78,7 @@ module Xiami
         album.cover_url = doc.at_css('.cdCDcover185')['src']
       end
 
-      fetch_largest_album_art! if Xiami.fetch_large_album_art
+      fetch_all_album_arts!
 
       @artist = Artist.new.tap do |artist|
         artist_node = doc.at_css('#albums_info').css('a').select { |a| a['href'] =~ /^\/artist\/(\d+)/ }.first
@@ -96,18 +96,16 @@ module Xiami
 
     private
 
-    def fetch_largest_album_art!
-      largest_album_art = album.cover_url.gsub(/(\d\.jpg)$/, '4.jpg')
+    def fetch_all_album_arts!
+      (1..5).each do |i|
+        current_album_art = album.cover_url.gsub(/(\d\.jpg)$/, "#{i}.jpg")
 
-      if FastImage.size(largest_album_art)
-        album.cover_url = largest_album_art
-      else
-        second_largest_album_art = album.cover_url.gsub(/(\d\.jpg)$/, '2.jpg')
-
-        if FastImage.size(second_largest_album_art)
-          album.cover_url = second_largest_album_art
+        if size = FastImage.size(current_album_art)
+          album.cover_urls << { url: current_album_art, size: size }
         end
       end
+
+      album.cover_url = album.cover_urls.max { |a, b| a[:size] <=> b[:size] }[:url]
     end
 
     def html_page
