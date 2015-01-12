@@ -2,6 +2,7 @@
 require "httpclient"
 require "cgi"
 require 'nokogiri'
+require 'fastimage'
 
 module Xiami
   class Song
@@ -54,13 +55,9 @@ module Xiami
         album.id = doc.at_css('track album_id').content.to_i
         album.name = CGI.unescapeHTML(doc.at_css('track album_name').content)
 
-        # using hack at this moment
-        if Xiami.fetch_large_album_art
-          album.cover_url = doc.at_css('track album_cover').content.gsub(/(3\.jpg)$/, '4.jpg')
-        else
-          album.cover_url = doc.at_css('track album_cover').content
-        end
+        album.cover_url = doc.at_css('track album_cover').content
       end
+      fetch_largest_album_art! if Xiami.fetch_large_album_art
 
       @artist = Artist.new.tap do |artist|
         artist.id = doc.at_css('track artist_id').content.to_i
@@ -78,12 +75,10 @@ module Xiami
       @album = Album.new.tap do |album|
         album.id = doc.at_css('#albumCover')['href'].match(/album\/(\d+)/)[1].to_i
         album.name = doc.at_css('#albumCover')['title']
-        if Xiami.fetch_large_album_art
-          album.cover_url = doc.at_css('.cdCDcover185')['src'].gsub(/(2\.jpg)$/, '4.jpg')
-        else
-          album.cover_url = doc.at_css('.cdCDcover185')['src']
-        end
+        album.cover_url = doc.at_css('.cdCDcover185')['src']
       end
+
+      fetch_largest_album_art! if Xiami.fetch_large_album_art
 
       @artist = Artist.new.tap do |artist|
         artist_node = doc.at_css('#albums_info').css('a').select { |a| a['href'] =~ /^\/artist\/(\d+)/ }.first
@@ -100,6 +95,20 @@ module Xiami
     end
 
     private
+
+    def fetch_largest_album_art!
+      largest_album_art = album.cover_url.gsub(/(\d\.jpg)$/, '4.jpg')
+
+      if FastImage.size(largest_album_art)
+        album.cover_url = largest_album_art
+      else
+        second_largest_album_art = album.cover_url.gsub(/(\d\.jpg)$/, '2.jpg')
+
+        if FastImage.size(second_largest_album_art)
+          album.cover_url = second_largest_album_art
+        end
+      end
+    end
 
     def html_page
       HTTPClient.new.get("http://www.xiami.com/song/#{id}").body

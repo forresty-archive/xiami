@@ -83,6 +83,15 @@ module Xiami
             song.artist.name.should == '梁博'
           end
         end
+
+        context 'when large image not available' do
+          it 'fall back to regular one' do
+            Xiami.fetch_large_album_art = true
+            song = Song.new(15914)
+            song.album.cover_url.should == 'http://img.xiami.net/images/pic/04/04/10123658079m_2.jpg'
+            Xiami.fetch_large_album_art = nil
+          end
+        end
       end
     end
 
