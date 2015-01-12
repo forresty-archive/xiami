@@ -62,6 +62,10 @@ Then it will utilize the URL pattern in album art and retrieve a larger album ar
 
 ## Changelog
 
+### 0.1.4 / 2015-01-12
+
+- fetch largest album art available
+
 ### 0.1.3 / 2015-01-12
 
 - parse HTML will not fail when artist has no ID
