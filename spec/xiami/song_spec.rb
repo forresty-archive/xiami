@@ -38,7 +38,7 @@ module Xiami
         song.album.id.should == '705574889'
       end
 
-      context 'when html' do
+      context 'when content contains html' do
         it 'unescapes' do
           song = Song.new(1242697)
           song.album.name.should == "(What's the Story) Morning Glory?"
@@ -50,6 +50,8 @@ module Xiami
           Xiami.fetch_large_album_art = true
 
           Song.new(1242697).album.cover_url.should == 'http://img.xiami.net/images/album/img1/10401/557231384238290_4.jpg'
+
+          Xiami.fetch_large_album_art = nil
         end
       end
     end

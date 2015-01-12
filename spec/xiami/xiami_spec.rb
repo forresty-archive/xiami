@@ -10,6 +10,7 @@ describe Xiami do
       it 'sets and gets' do
         Xiami.fetch_large_album_art = true
         Xiami.fetch_large_album_art.should == true
+        Xiami.fetch_large_album_art = nil
       end
     end
   end

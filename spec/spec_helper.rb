@@ -9,6 +9,11 @@ require "xiami"
 require "webmock"
 WebMock.disable_net_connect!
 
+RSpec.configure do |config|
+  config.fail_fast = true
+  config.order = 'random'
+end
+
 def fixture(path)
   File.new(File.expand_path("../fixtures/#{path}.xml", __FILE__))
 end
