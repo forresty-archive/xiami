@@ -75,6 +75,14 @@ module Xiami
             Xiami.fetch_large_album_art = nil
           end
         end
+
+        context 'with song id 1770769001' do
+          it 'pass' do
+            song = Song.new(1770769001)
+            song.artist.id.should == nil
+            song.artist.name.should == nil
+          end
+        end
       end
     end
 
