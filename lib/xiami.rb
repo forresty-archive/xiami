@@ -4,6 +4,7 @@ require_relative 'xiami/parsers/xml_parser'
 require_relative 'xiami/parsers/html_parser'
 
 require_relative 'xiami/searcher'
+require_relative 'xiami/cover_fetcher'
 
 require_relative "xiami/album"
 require_relative "xiami/artist"

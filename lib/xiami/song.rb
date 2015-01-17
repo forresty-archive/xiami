@@ -1,5 +1,4 @@
 require "httparty"
-require 'fastimage'
 
 module Xiami
   class Song
@@ -17,8 +16,7 @@ module Xiami
         song_id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
 
         fetch!(song_id)
-      rescue
-        nil
+
       end
 
       def fetch!(id)
@@ -45,15 +43,10 @@ module Xiami
     end
 
     def fetch_all_album_arts!
-      (1..5).each do |i|
-        current_album_art = album.cover_url.gsub(/(\d\.jpg)$/, "#{i}.jpg")
+      results = CoverFetcher.fetch_all(album.cover_url)
 
-        if size = FastImage.size(current_album_art)
-          album.cover_urls << { url: current_album_art, size: size }
-        end
-      end
-
-      album.cover_url = album.cover_urls.max { |a, b| a[:size] <=> b[:size] }[:url]
+      album.cover_urls = results[:cover_urls]
+      album.cover_url = results[:cover_url]
     end
 
     def ==(another)
