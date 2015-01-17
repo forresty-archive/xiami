@@ -1,0 +1,2015 @@
+
+
+
+
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-CN"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="data-spm" content="a1z1s" />
+	<title>虾米音乐搜索引擎</title>
+	<meta name="verify-v1" content="gNntuhTm2rH7Qa/GPp6lf0mIp9KQsjejNs+i1LZhG7U=" />
+	<meta name="keywords" content="虾米音乐搜索引擎" />
+	<meta name="description" content="虾米音乐搜索引擎" />
+	
+	<meta name="apple-itunes-app" content="app-id=595594905">
+	<meta name="applicable-device" content="pc"> 
+	<link href="http://res.xiami.net/static/common/base.css?ver=20141218-150605" media="all" rel="stylesheet" />
+
+		<link href="http://res.xiami.net/??res/v3/css/global.css,res/v3/css/login.css,static/css/basic/core_mod.css,static/relation/css/name_card.css?ver=20141218-150605" media="all" rel="stylesheet" />
+
+		<link href="http://res.xiami.net/??static/lib/jquery.jscrollpane.css,static/common/header.css,static/common/footer.css?ver=20141218-150605" media="all" rel="stylesheet" />
+
+	<link href="http://res.xiami.net/??res/css/default/main15.css,res/css/default/mode15.css?ver=20141218-150605" media="all" rel="stylesheet" />
+<link href="http://res.xiami.net/??res/css/default/group15.css,res/css/default/beta15.css?ver=20141218-150605" media="all" rel="stylesheet" />
+<link href="http://res.xiami.net/??static/music/common/album.css,static/music/common/artist.css?ver=20141218-150605" media="all" rel="stylesheet" />
+
+	<link href="http://res.xiami.net/static/common/old.css?ver=20141218-150605" media="all" rel="stylesheet" />
+
+	<link href="http://img.xiami.net/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+	<link href="http://img.xiami.net/res/img/common/ipad/xiami_logo_apple.png" rel="apple-touch-icon" />
+	<link href="http://www.xiami.com/opensearch.xml" type="application/opensearchdescription+xml" rel="search" title="Xiami Search"/>
+	<link rel="alternate" type="application/atom+xml" title="虾米音乐每日精选" href="http://www.xiami.com/collect/feed">
+
+	
+	
+	<style type="text/css">
+
+		#header{   text-align: left;  zoom:1;  z-index:10; }
+		#header .wrapper,#secondary .wrapper,#footer .wrapper{
+			_width: expression(documentElement.clientWidth < 980? "980px" : documentElement.clientWidth > 1100? "1100px" : "auto");
+		}
+
+		.ie6 #secondary a.current{ background: none;}
+		#header .primary .search .submit{ padding:0; cursor: pointer;}
+		#header a,#secondary a{ text-decoration:none;}
+		#header .user{vertical-align:top;}
+		#header .auto_complete strong{ font-weight:normal;}
+		#header .primary .user_popup .content ul .logout{ padding:0;}
+		#header .content,#secondary .content{ overflow: visible;}	
+		#secondary{  text-align: left;}
+		.no-shadow{ box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important;}
+		#footer{zoom: 1;}
+	</style>
+	
+
+
+	<!--[if lte IE 8]>
+	<link href="http://res.xiami.net/res/v3/css/login_iefix.css?v=20130521145542" rel="stylesheet" media="all" />
+	<![endif]-->
+
+		<script type="text/javascript" src="http://res.xiami.net/??static/lib/jQuery/1.4.4/jquery.min.js,res/js/jquery/jqDnR.js,static/lib/jqModal.js,res/js/jquery/jquery.form.js,res/js/jquery/jquery.cookie.js,res/js/jquery/jquery.tools.js,res/v3/js/functions/index.js,res/js/default/xiami.js?ver=20141218-150605"></script>
+
+		<script type="text/javascript" src="http://res.xiami.net/??static/js/lib/jquery.tmpl.min.js,static/js/app/relation.js,static/js/app/nameCard.js?ver=20141218-150605"></script>
+
+
+	<script type="text/javascript" src="http://res.xiami.net/??static/lib/jquery.mousewheel.js,static/lib/jquery.jscrollpane.min.js,static/common/header_old.js,static/common/base.js?ver=20141218-150605"></script>
+
+
+	<script>
+	var _xiamitoken = $.cookie('_xiamitoken'),
+		_xiamiimg = 'http://img.xiami.net',
+		_xiamiuser = $.cookie('user') || '',
+		_athenaapiurl = 'ihi.xiami.com';
+	</script>
+
+	<script type="text/javascript" src="http://res.xiami.net/static/music/common/frame.js?ver=20141218-150605"></script>
+
+
+	<!-- google ads -->
+	
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+
+googletag.defineSlot('/2315836/Muisc-Album_Right_300x250', [300, 250], 'div-gpt-ad-1414398126484-0').addService(googletag.pubads());
+googletag.defineSlot('/2315836/Muisc-Album_Bottom_300x250', [640, 100], 'div-gpt-ad-1414398685761-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Music-Artist_Right_300x250', [300, 250], 'div-gpt-ad-1414398815789-0').addService(googletag.pubads());
+googletag.defineSlot('/2315836/Music-Artist_Bottom_300x250', [640, 100], 'div-gpt-ad-1414398865084-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Collect-Homepage_Right_300x250', [300, 250], 'div-gpt-ad-1414398966988-0').addService(googletag.pubads());
+googletag.defineSlot('/2315836/Collect-Homepage_Right2_300x250', [300, 250], 'div-gpt-ad-1414399009160-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/配送类', [640, 100], 'div-gpt-ad-1414399676656-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Muisc-Channel_Right_160x350', [160, 350], 'div-gpt-ad-1414401252795-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Notice_Right_300x250', [300, 250], 'div-gpt-ad-1414401341474-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Music-Song_Bottom_300x250', [640, 100], 'div-gpt-ad-1414481074453-0').addService(googletag.pubads());
+googletag.defineSlot('/2315836/Music-Song_Right_300x250', [300, 250], 'div-gpt-ad-1414481115405-0').addService(googletag.pubads());
+
+googletag.defineSlot('/2315836/Collect-Detail_Right_300x250', [300, 250], 'div-gpt-ad-1414481190531-0').addService(googletag.pubads());
+googletag.defineSlot('/2315836/Collect-Detail_Right2_300x250', [300, 250], 'div-gpt-ad-1414393340166-0').addService(googletag.pubads());
+
+//googletag.pubads().enableSingleRequest();
+googletag.pubads();// disabled ads combo request
+googletag.enableServices();
+});
+</script>
+	<!-- end -->
+
+</head>
+<body data-spm="3521865"><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&asid=AABYxJJU2XBF1dc3xO8=",id="tb-beacon-aplus",src=(location>"https"?"//s":"//a")+".tbcdn.cn/s/aplus_v2.js")
+</script>
+
+
+
+<div id="xiami-content"></div>
+<div id="web_loading">Loading...</div>
+
+
+
+
+
+<div id="header" data-spm="226669510" >
+	<div class="primary">
+		<div class="gap">
+		<div class="wrapper">
+			<table>
+				<tr>
+																				<td class="logo"><a href="http://www.xiami.com/" title="虾米音乐网(xiami.com) - 高品质音乐 发现 分享">虾米音乐网(xiami.com) - 高品质音乐 发现 分享</a></td>
+										<td class="nav">
+						<a class="bigtext " href="http://www.xiami.com/">发现音乐</a>
+						<a class="bigtext " href="http://www.xiami.com/space/lib-song">我的音乐</a>
+					</td>
+					<td class="subnav">
+						<a class="bigtext first " href="http://www.xiami.com/collect">精选集</a>
+						<a class="bigtext middle " target="_blank" href="http://www.xiami.com/radio">电台</a>
+						<a class="bigtext middle " href="http://i.xiami.com">音乐人</a>
+						<script>
+							document.write('<a class="bigtext last" href="http://music.taobao.com" target="_blank" style="zoom:1;position:relative;" onclick="goldlog.record(\'/xiamipc.1.15\',\'\',\'event=click&from=xiaminav&userid='+_xiamiuser.split('"')[0]+'\',\'H46807199\');">音乐馆<sup style="display:none;position:absolute;right:-13px;top:-6px;_top:1px;width:16px;height:18px;background:url(\'http://img.xiami.net/static/img/common/sale.png\') no-repeat"></sup></a>');
+						</script>
+					</td>
+					<td class="search">
+						<div class="container">
+							<form action="http://www.xiami.com/search" method="get" id="search">
+								<input class="keyword" autocomplete="off" placeholder="音乐搜索，找人..." name="key" />
+								<input class="icon submit" type="submit" value="搜索" />
+								<input type="hidden" name="pos" value="1" />
+							</form>
+							<div class="auto_complete"></div>
+						</div>
+					</td>
+										<td class="reg">
+						<a href="http://www.xiami.com/member/register">免费注册</a>
+					</td>
+					<td class="login">
+						<a class="first" href="https://login.xiami.com/member/login">立即登录</a>
+						<a class="middle" href="" onclick="sinaLogin();return false;"><b class="icon weibo">weibo</b></a>
+						<a class="last" href="" onclick="qqLogin();return false;"><b class="icon qq">qq</b></a>
+					</td>
+									</tr>
+			</table>
+			<div class="notify_popup">
+				<div class="content">
+					<div class="container"><p class="loading"></p></div>
+					<b class="triangle"><i>◆</i>◆</b>
+				</div>
+			</div>			
+			<div class="user_popup">
+				<div class="content">
+					<ul>
+						<li><a href="http://www.xiami.com/u/"><b class="icon home"></b>我的主页</a></li>
+						<li class="fence"></li>
+						<li><a href="http://www.xiami.com/relation/following"><b class="icon relationship"></b>关注 / 粉丝</a></li>
+						<li><a href="http://www.xiami.com/vip"><b class="icon vip"></b>VIP</a></li>
+						<li><a href="http://www.xiami.com/account"><b class="icon account"></b>账户</a></li>
+						<li><a href="http://www.xiami.com/property/myproperties"><b class="icon props"></b>道具</a></li>
+						<li><a href="http://www.xiami.com/share"><b class="icon setting"></b>设置</a></li>
+						<li class="fence"></li>
+						<li><a href="" class="logout" onclick="return false;"><b class="icon logout"></b>退出</a></li>
+					</ul>
+					<b class="triangle"><i>◆</i>◆</b>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div id="hidden_obj">
+	<object data="/res/player/sdtos.swf?v=1418904664" type="application/x-shockwave-flash" width="1" height="1" id="trans" name="trans">
+	    <param name="movie" value="/res/player/sdtos.swf?v=1418904664" />
+	    <param name="quality" value="high" />
+	    <param name="wmode" value="window" />
+		<param name="allowScriptAccess" value="sameDomain" />
+	</object>
+</div>
+<style type="text/css">
+#wrapper .search_box{position:relative;}
+.albumBlock_list ul li{ margin: 15px 7px 0 0;}
+.artistBlock_list ul li{  margin: 0 27px 15px 0;}
+.collectBlock_list ul li{margin: 10px 33px 10px 0;}
+.track_list tr.same_group td {
+  background-color:#fff4ed;
+}
+.track_list tr.same_group td.chkbox {
+  border-left: 2px solid #f60;
+}
+.track_list a.slide_down,
+.track_list a.slide_up {
+  display:block;
+  width:17px;
+  height:17px;
+  background-image:url(http://img.xiami.net/res/img/default/slide_group.gif);
+  float:right;
+  margin: 0 10px 0 0;
+}
+.track_list a.slide_down {
+  background-position:0 0;
+}
+.track_list a.slide_down:hover {
+  background-position:0 -17px;
+}
+.track_list a.slide_up {
+  background-position:0 -34px !important;
+}
+.track_list a.slide_up:hover {
+  background-position:0 -51px !important;
+}
+.vicos{background:url( http://img.xiami.net/res/img/default/verify_ico.gif) 100% 0 no-repeat; padding-right:18px;}
+</style>
+<script type="text/javascript">
+$(function() {
+  $(".track_list tr.same_group:first").show();
+  
+	$(".track_list a.slide_down").click(function(){
+    	$(this).toggleClass("slide_down").toggleClass("slide_up");
+		$(this).parents('tbody').next("tbody.same_song_group").toggle().find('input[type=checkbox]').attr('checked','checked');
+		
+	});
+})
+</script>
+
+<div id="page" class="old">
+	<div id="wrapper">
+		<div class="title18_search">
+	<h1>虾米音乐搜索</h1>
+	<div class="search_tab" data-spm="23309985">
+		<ul>
+			<li><a class="current" href="javascript:;" title=""><span>全部</span></a></li>
+			<li><a href="http://www.xiami.com/search/song/?key=radiohead" title="歌曲"><span>歌曲</span></a></li>
+			<li><a href="http://www.xiami.com/search/album/?key=radiohead" title="专辑"><span>专辑</span></a></li>
+			<li><a href="http://www.xiami.com/search/artist/?key=radiohead" title="艺人"><span>艺人</span></a></li>
+			<li><a href="http://www.xiami.com/search/song-lyric/?key=radiohead" title="歌词"><span>歌词</span></a></li>
+			<li><a href="http://www.xiami.com/search/collect/?key=radiohead" title="精选集"><span>精选集</span></a></li>
+			<li><a href="http://www.xiami.com/song/tag/radiohead" title=""><span>标签</span></a></li>
+		</ul>
+	</div>
+</div>	
+		<div class="more_cols clearfix">
+			<div class="more_cols_left">
+				<div class="more_cols_left_inner">
+				<div class="search_box" data-spm="23309989">
+					<form class="big_search_form" name="searchindex" id="" action="http://www.xiami.com/search" method="get" autocomplete="off" ONSUBMIT="search_focus();">
+						<input class="big_search grey" type="text" id="search_text" name="key" title="搜索您感兴趣的专辑/歌曲/艺人"  value="radiohead" onfocus="search_focus('click');" onblur="search_focus('blur');" />
+						<input class="big_search_bt" type="submit" value="搜索" id="musicsearch" />
+					</form>
+                    <span style="position:absolute;left:0;bottom:10px;">大家都在听虾米音乐人：<a href="/search?key=%E7%97%9B%E4%BB%B0%E4%B9%90%E9%98%9F&pos=1&from=searchbottom">痛仰乐队</a></span>										<span class="hints">支持拼音首字母搜索。如搜索“刘德华”输入“ldh”即可。</span>
+				</div>
+				<input type="hidden" name="tour_name" value="radiohead" id="tour_name" />
+											<div class="search_result">
+								
+						<style type="text/css">
+						.top_box{ 
+							position: relative;
+							height: 100%;
+							margin: 15px 0 30px 0;
+							padding: 18px 18px 15px 18px;
+							font-family: '微软雅黑',Helvetica,Arial,sans-serif;
+							border: 1px solid #ebebeb; 
+							border-radius: 5px;
+							-moz-border-radius: 5px;
+							-webkit-border-radius: 5px;
+							-o-border-radius: 5px;
+							background: #fafafa;
+						}
+						.album_box,.artist_box{ padding-bottom: 10px;}
+						.top_box .image{
+							float: left;
+							margin-right: 15px;
+						}
+						.top_box .image a{ text-decoration: none;}
+
+						.top_box .album,.top_box .artist{ float: left; width: 490px;}
+
+						.top_box .image .CDcover100{
+							background: url(http://img.xiami.net/res/img/default/cd100.png) 0 0 no-repeat;
+							padding: 7px 6px 14px 17px;
+							width: 100px;
+							height: 100px;
+							display: block;
+						}
+
+						.top_box .info h3{
+							overflow: hidden;
+							font-size: 24px;
+							line-height: 24px;
+							padding-bottom: 5px;
+							color: #fc6621;
+							font-weight: normal;
+						}
+						.top_box .info h3 a{
+							float:left;
+							padding-right:5px;						
+						}
+						.top_box .info h3 a{color: #fc6621;}
+						.top_box .info h3 a:hover{ text-decoration: none;}
+						.top_box .info span{ color: #999; font-size: 14px;}
+						.top_box .info table{ margin-top: 5px; width: 370px;}
+						.album_box .info table{ width: 340px;}
+
+						.top_box .info table td{ padding:4px 15px 4px 0; color: #333;}
+						.top_box .info table td.item{ color: #999; width: 40px; vertical-align: top;}
+						.album_box .info table td.item,.artist_box .info table td.item{ width: 60px; text-align: right;}
+						.top_box .info table td a{ line-height: 1; color: #36c;}
+						.top_box .r_info{float: right;}
+						.top_box .r_info .music_count{
+							margin-bottom: 20px;
+							padding: 6px 0;
+							border-top: 1px #e5e5e5 dotted;
+							border-bottom: 1px #e5e5e5 dotted;
+							width: 300px;
+							float: right;
+						}
+						.album_box .r_info .music_count{ margin-bottom: 35px; float: none;}
+						.top_box .r_info .music_count li{ 
+							font-size: 14px;
+							padding-right: 20px;
+							width: 79px;
+							display: inline;
+							float: left;
+							text-align: right;
+							color: #666;
+							font-family: Tahoma, Geneva, sans-serif;
+						}
+						.top_box .r_info .music_count li.line{border-right: 1px #f2f2f2 solid;}
+						.top_box .r_info .music_count li span{ display: block; font-size: 12px; color: #bbb;}
+						.top_box .r_info .music_count li a{ color: #666;}
+						.top_box .r_info  a:hover{ text-decoration: none;}
+
+						.top_box .radioplay{ float: right;}
+						.top_box .radioplay a{
+							background: url("http://img.xiami.net/res/img/default/radio_icon.png") no-repeat 0 0;
+							display: block;
+							height: 35px;
+							line-height: 35px;
+							width: 134px;
+							color: #fff;
+							font-size: 14px;
+							font-family: "宋体";
+							padding-left: 32px;
+							text-align: center;
+						}
+						.top_box .radioplay a:hover{
+							background-position: 0 -42px;
+						}
+						.top_box #album_rank{float:right;}
+						.top_box #album_rank p{
+							position:relative;
+							padding:0 20px 0 100px;
+							line-height:22px;
+							color:#999;
+							background:url('http://img.xiami.net/res/v3/img/star3.png') no-repeat 0 0;
+							font-family:"Microsoft Yahei";
+						}
+						.top_box #album_rank span{
+							position:absolute;
+							left:0;top:0;
+							background:url('http://img.xiami.net/res/v3/img/star3.png') no-repeat 0 -24px;
+							text-indent:-9999px;
+						}
+						.top_box #album_rank em{
+							margin:0 10px;
+							font-weight:bold;
+							font-size:16px;
+							font-style:normal;
+							color:#F60;
+							vertical-align:middle;
+						}
+						.hot_songs_wrap{ float: right; display: inline; margin-right: 10px;}
+						.hot_songs_wrap a{
+							background: url("http://img.xiami.net/res/img/default/hotsong_bg.png") no-repeat 0 0;
+							display: block;
+							height: 35px;
+							line-height: 35px;
+							width: 150px;
+							color: #fff;
+							font-size: 14px;
+							font-family: "宋体";
+							padding-left: 32px;
+							text-align: center;
+						}
+						.hot_songs_wrap a:hover{ background-position: 0 -35px;}
+
+
+						</style>
+						
+												<div class="top_box artist_box clearfix" data-spm="1997177593">
+							<div class="artist">
+								<div class="image">
+									<img src="http://img.xiami.net/images/artistlogo/61/13746536633561_1.jpg" alt="" height="100" width="100">
+									<a href="/artist/10454?from=searchsubject" target="_blank"><i></i></a>
+									<dl>
+										<dt><u></u><s></s></dt>
+										<dd>
+											<ul>
+							                    <li data-action="favourite" class="favourite" onclick="tag(10454,6);return false;"><a href=""><q></q>收藏</a></li>
+							                    <li data-action="share" class="share" onclick="recommend(10454,34);return false;"><a href=""><q></q>分享到</a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="info">
+									<h3><a href="/artist/10454?from=searchsubject" target="_blank">Radiohead</a><i id="artist_musicians"></i></h3>
+									<span title="电台司令">电台司令</span>
+									<table>
+										<tr>
+											<td class="item">地区：</td>
+											<td>United Kingdom 英国</td>
+										</tr>
+										<tr>
+											<td class="item" id="artist_styles_name"></td>
+											<td id="artist_styles"> </td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="r_info">
+								<div class="music_count">
+									<ul class="clearfix">
+										<li class="line"><i id="play_count_num"></i><span>试听</span></li>
+										<li class="line"><a href="/artist/fans/id/10454" title="78488" target="_blank"><i>78488</i></a><span>粉丝</span></li>
+										<li><a href="/artist/10454/?from=searchsubject#wall" target="_blank"><i id="artist_comment_num"></i><span>评论</span></a></li>
+									</ul>
+								</div>
+								<div class="clearfix">								
+									<div class="radioplay">
+										<a target="_blank" title="播放 Radiohead 电台" href="/radio/play/type/5/oid/10454?from=searchsubject" onclick="goldlog.record('/xiamipc.1.4','','cache=20140401140724','H46777407');">播放艺人电台</a>
+									</div>
+									<div class="hot_songs_wrap">
+										<a title="播放 Radiohead 热门歌曲" href="javascript:void(0);" id="artist_hot_play" onclick="goldlog.record('/xiamipc.1.3','','cache=20140401140724','H46777406');"><span>播放艺人热门歌曲</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /艺人 -->
+																												<!--song-->
+										<div class="search_result_box" data-spm="23309997">
+						<h5>歌曲</h5>
+						<div class="result_main">
+							<table class="track_list" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr>
+										<th class="chkbox">&nbsp;</th>
+										<th class="song_name">歌名</th>
+										<th class="song_artist">艺人</th>
+										<th class="song_album">所属专辑</th>
+										<th class="song_act">&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody>
+																		<tr class="same_group group_first ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1079377" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a href="javascript:;" class="slide_down" title="该艺人演唱的其他版本"></a>
+																						<a target="_blank" href="http://www.xiami.com/song/1079377" title="Creep">Creep</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56346" title="Pablo Honey">《Pablo Honey》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1079377');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1079377','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1079377');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1079377');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1079377');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1079377,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1079377" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+																		<tbody class="same_song_group" style="display:none;">
+																				<tr class='same_group' >
+											<td class="chkbox">
+												<input  type="checkbox"  value="2092776" name="recommendids" />
+											</td>
+											<td class="song_name">
+												<a target="_blank" href="http://www.xiami.com/song/2092776" title="Creep">Creep</a>
+																																			</td>
+											<td class="song_artist">
+												<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+													<b class="key_red">Radiohead</b>												</a>
+											</td>
+											<td class="song_album">
+												<a target="_blank" href="http://www.xiami.com/album/169475" title="The Best Of">《The Best Of》</a>
+											</td>
+											<td class="song_act">
+												<div class="song_do" style="width:170px;">
+																										<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('2092776');">试听</a>
+																										<a class="song_digg" href="javascript:void(0)" title="分享" onclick="recommend('2092776','32')">分享</a>
+													<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('2092776');">添加到</a>
+																										<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('2092776');">下载</a>
+													<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/2092776');" title="发送到我的设备">发送到我的设备</a>
+																																								<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(2092776,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=2092776" title="">转贴到其它网站</a></span>
+</div>																									</div>
+											</td>
+										</tr>
+																			</tbody>
+															
+																<tr class="same_group group_first bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1079676" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a href="javascript:;" class="slide_down" title="该艺人演唱的其他版本"></a>
+																						<a target="_blank" href="http://www.xiami.com/song/1079676" title="No Surprises">No Surprises</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56348" title="OK Computer">《OK Computer》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1079676');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1079676','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1079676');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1079676');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1079676');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1079676,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1079676" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+																		<tbody class="same_song_group" style="display:none;">
+																				<tr class='same_group' >
+											<td class="chkbox">
+												<input  type="checkbox"  value="1769692213" name="recommendids" />
+											</td>
+											<td class="song_name">
+												<a target="_blank" href="http://www.xiami.com/song/1769692213" title="No Surprises">No Surprises</a>
+																																			</td>
+											<td class="song_artist">
+												<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+													<b class="key_red">Radiohead</b>												</a>
+											</td>
+											<td class="song_album">
+												<a target="_blank" href="http://www.xiami.com/album/216526" title="No Surprises / Running from Demons">《No Surprises / Running from Demons》</a>
+											</td>
+											<td class="song_act">
+												<div class="song_do" style="width:170px;">
+																										<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769692213');">试听</a>
+																										<a class="song_digg" href="javascript:void(0)" title="分享" onclick="recommend('1769692213','32')">分享</a>
+													<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769692213');">添加到</a>
+																										<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769692213');">下载</a>
+													<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769692213');" title="发送到我的设备">发送到我的设备</a>
+																																								<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769692213,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769692213" title="">转贴到其它网站</a></span>
+</div>																									</div>
+											</td>
+										</tr>
+																			</tbody>
+															
+																<tr class=" ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="2092783" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/2092783" title="Fake Plastic Trees">Fake Plastic Trees</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/169475" title="The Best Of">《The Best Of》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('2092783');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('2092783','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('2092783');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('2092783');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/2092783');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(2092783,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=2092783" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="2053304" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/2053304" title="Last Flowers">Last Flowers</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56353" title="In Rainbows">《In Rainbows》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('2053304');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('2053304','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('2053304');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('2053304');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/2053304');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(2053304,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=2053304" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1769562528" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1769562528" title="Creep (Acoustic)">Creep (Acoustic)</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56346" title="Pablo Honey">《Pablo Honey》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769562528');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1769562528','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769562528');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769562528');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769562528');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769562528,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769562528" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1079509" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1079509" title="High and Dry">High and Dry</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56347" title="The Bends">《The Bends》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1079509');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1079509','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1079509');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1079509');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1079509');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1079509,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1079509" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1769706099" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1769706099" title="Last Flowers">Last Flowers</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/23257" title="オリジナルサウンドトラック">
+												日本原声带(<b class="key_red">Radiohead</b>)											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/396663" title="告白 电影原声带">《告白 オリジナル・サウンドトラック》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769706099');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1769706099','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769706099');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769706099');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769706099');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769706099,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769706099" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1079670" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1079670" title="Exit Music (For a Film)">Exit Music (For a Film)</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56348" title="OK Computer">《OK Computer》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1079670');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1079670','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1079670');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1079670');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1079670');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1079670,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1079670" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1079668" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1079668" title="Paranoid Android">Paranoid Android</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56348" title="OK Computer">《OK Computer》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1079668');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1079668','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1079668');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1079668');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1079668');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1079668,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1079668" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1769562531" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1769562531" title="Faithless The Wonder Boy">Faithless The Wonder Boy</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56346" title="Pablo Honey">《Pablo Honey》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769562531');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1769562531','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769562531');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769562531');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769562531');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769562531,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769562531" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" ">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1769562526" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1769562526" title="Blow Out (Remix)">Blow Out (Remix)</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56346" title="Pablo Honey">《Pablo Honey》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769562526');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1769562526','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769562526');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769562526');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769562526');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769562526,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769562526" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+																<tr class=" bg_grey">
+										<td class="chkbox">
+											<input checked="checked" type="checkbox"  value="1769562522" name="recommendids" />
+										</td>
+										<td class="song_name">
+																						<a target="_blank" href="http://www.xiami.com/song/1769562522" title="Thinking About You (Demo)">Thinking About You (Demo)</a>
+																																											</td>
+										<td class="song_artist">
+											<a target="_blank" href="http://www.xiami.com/artist/10454" title="电台司令">
+												<b class="key_red">Radiohead</b>											</a>
+										</td>
+										<td class="song_album">
+																						<a target="_blank" href="http://www.xiami.com/album/56346" title="Pablo Honey">《Pablo Honey》</a>
+																					</td>
+										<td class="song_act">
+																							<div class="song_do" style="width:170px;_width:180px;">
+<a class="song_play" href="javascript:void(0)" title="试听" onclick="play('1769562522');"><span>试听</span></a> 
+<a class="song_digg" href="javascript:void(0)" title="推荐" onclick="recommend('1769562522','32')"><span>推荐</span></a> 
+<a class="song_toclt" href="javascript:void(0)" title="添加到精选集" onclick="collect('1769562522');"><span>添加到am精选集</span></a>
+<a class="song_download" href="javascript:void(0)" title="下载" onclick="xm_download('1769562522');"><span>下载</span></a>
+<a class="song_tel" href="javascript:void(0)" onclick="showDialog('/music/send/id/1769562522');" title="发送到">发送到</a>
+<div class="song_menu">
+<a class="song_more" href="javascript:void(0)" title="">更多</a>
+<span class="song_menu_drop">
+<em></em>
+<a href="javascript:;" onclick="tag(1769562522,3);" title="">添加标签</a>
+<a class="toplayer" href="http://www.xiami.com/widget/isingle?sid=1769562522" title="">转贴到其它网站</a></span>
+</div></div>																					</td>
+									</tr>
+															
+															</tbody>
+
+							</table>
+						</div>
+						<div class="chapter_ctrl cd_count">
+							<div class="ctrl_play">
+								<a onclick="selectAll('recommendids')" title="" href="javascript:void(0)" class="bt_choose">
+									<span>全选</span>
+								</a>
+								<a title="" onclick="inverse('recommendids');" href="javascript:void(0);" class="bt_choose">
+									<span>反选</span>
+								</a>
+								<a onclick="playsongs('recommendids');" title="" href="javascript:void(0);" class="bt_play">
+									<span>播放选中歌曲</span>
+								</a>
+							</div>
+						</div>
+												<span class="y_more">
+							<a href="http://www.xiami.com/search/song?key=radiohead" title="">更多歌曲(1167)</a>
+						</span>
+											</div>
+										<!--radio-->
+										<!--album-->
+										<div class="search_result_box" data-spm="23310001">
+						<h5>专辑</h5>
+						<div class="result_main">
+							<div class="albumBlock_list" >
+								<ul class="clearfix">
+									
+									<style>
+.album_item100_block .album_rank{position:relative;height:12px;margin:10px 0 10px 5px;padding-left:50px;color:#999;background:url('http://img.xiami.net/res/v3/img/star4_v3.png') no-repeat 0 2px;vertical-align:middle;}
+.album_item100_block .album_rank span{position:absolute;height:12px;left:0;top:0;background:url('http://img.xiami.net/res/v3/img/star4_v3.png') no-repeat 0 -8px;text-indent:-9999px;}
+.album_item100_block .album_rank em{float:left;margin-left:5px;font:normal 10px tahoma;color:#F60;vertical-align:middle;}
+.album_item100_block .name {height:45px !important;}
+</style>
+									
+																	<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56346" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563461374571425_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56346" title="Pablo Honey" >
+													Pablo Hone...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:47px;">总体评分</span>
+												<em>9.4</em>
+											</p>
+											<p class="year">1993-04-20</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56348" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563481336108555_1.jpeg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56348" title="OK Computer" >
+													OK Compute...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:48.5px;">总体评分</span>
+												<em>9.7</em>
+											</p>
+											<p class="year">1997-07-01</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/169475" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/1694751418202640_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/169475" title="The Best Of" >
+													The Best O...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:47.5px;">总体评分</span>
+												<em>9.5</em>
+											</p>
+											<p class="year">2008-06-03</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56347" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563471337679442_1.jpeg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56347" title="The Bends" >
+													The Bends
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:48px;">总体评分</span>
+												<em>9.6</em>
+											</p>
+											<p class="year">1995-04-04</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56353" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563531390549479_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56353" title="In Rainbows" >
+													In Rainbow...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:47.5px;">总体评分</span>
+												<em>9.5</em>
+											</p>
+											<p class="year">2007-10-10</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/426222" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/4262221301388856_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/426222" title="The King Of Limbs" >
+													The King O...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:44.5px;">总体评分</span>
+												<em>8.9</em>
+											</p>
+											<p class="year">2011-02-18</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56352" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563521374570105_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56352" title="Hail to the Thief" >
+													Hail to th...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:46.5px;">总体评分</span>
+												<em>9.3</em>
+											</p>
+											<p class="year">2003-06-10</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56349" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563491336108583_1.jpeg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56349" title="Kid A" >
+													Kid A
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:47px;">总体评分</span>
+												<em>9.4</em>
+											</p>
+											<p class="year">2000-10-03</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/406459" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/4064591374570180_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/406459" title="Towering Above The Rest" >
+													Towering A...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:48.5px;">总体评分</span>
+												<em>9.7</em>
+											</p>
+											<p class="year">2002-01-01</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/56350" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/563501372410247_1.jpeg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/56350" title="Amnesiac" >
+													Amnesiac
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:46px;">总体评分</span>
+												<em>9.2</em>
+											</p>
+											<p class="year">2001-06-05</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/325168" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/3251681376984776_1.jpg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/325168" title="The Golden Unplugged Album" >
+													The Golden...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:48.5px;">总体评分</span>
+												<em>9.7</em>
+											</p>
+											<p class="year">2000-01-01</p>
+										</div>
+									</li>
+																		<li>
+										<div class="album_item100_block">
+											<p class="cover">
+												<a class="CDcover100" href="http://www.xiami.com/album/216526" title="">
+													<img src="http://img.xiami.net/images/album/img54/10454/2165261374570780_1.jpeg" width="100" height="100" alt="" />
+												</a>
+																							</p>
+											<p class="name">
+												<a class="song" href="http://www.xiami.com/album/216526" title="No Surprises / Running from Demons" >
+													No Surpris...
+																								</a>
+												<a class="singer" href="http://www.xiami.com/artist/10454" title="电台司令"><b class="key_red">Radiohead</b></a>
+											</p>
+											<p class="album_rank clearfix">
+												<span style="width:47.5px;">总体评分</span>
+												<em>9.5</em>
+											</p>
+											<p class="year">1997-12-10</p>
+										</div>
+									</li>
+																	</ul>
+							</div>
+						</div>
+												<span class="y_more">
+							<a href="http://www.xiami.com/search/album?key=radiohead" title="">更多专辑(58)</a>
+						</span>
+											</div>
+										<!--artist-->
+										<div class="search_result_box search_result_box_artist" data-spm="226668882">
+						<h5>艺人</h5>
+						<div class="result_main">
+							<div class="artistBlock_list">
+								<ul>
+																		<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/10454" title="Radiohead">
+													<img  src="http://img.xiami.net/images/artistlogo/61/13746536633561_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/10454" title="电台司令">
+													<strong><b class="key_red">Radiohead</b>
+																												<span class="singer_names">(电台司令)</span>
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放Radiohead的电台" href="http://www.xiami.com/radio/play/type/5/oid/10454" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United Kingdom 英国">United Kingdom 英国</span>
+																							</p>
+											<!--<p class="counts">19张专辑 | 78488位粉丝</p>
+										-->
+									</div>
+								</li>
+																	<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/77041" title="Atoms for Peace">
+													<img  src="http://img.xiami.net/images/artistlogo/22/12791749075022_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/77041" title="">
+													<strong>Atoms for Peace
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放Atoms for Peace的电台" href="http://www.xiami.com/radio/play/type/5/oid/77041" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United States of America 美国">United States of America 美国</span>
+																							</p>
+											<!--<p class="counts">0张专辑 | 2169位粉丝</p>
+										-->
+									</div>
+								</li>
+																	<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/31644" title="Jonny Greenwood">
+													<img  src="http://img.xiami.net/images/artistlogo/83/12922287135983_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/31644" title="">
+													<strong>Jonny Greenwood
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放Jonny Greenwood的电台" href="http://www.xiami.com/radio/play/type/5/oid/31644" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United Kingdom 英国">United Kingdom 英国</span>
+																							</p>
+											<!--<p class="counts">5张专辑 | 1688位粉丝</p>
+										-->
+									</div>
+								</li>
+																	<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/98889" title="On a Friday">
+													<img  src="http://img.xiami.net/images/artistlogo/25/13196218314325_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/98889" title="">
+													<strong>On a Friday
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放On a Friday的电台" href="http://www.xiami.com/radio/play/type/5/oid/98889" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United Kingdom 英国">United Kingdom 英国</span>
+																							</p>
+											<!--<p class="counts">0张专辑 | 235位粉丝</p>
+										-->
+									</div>
+								</li>
+																	<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/76826" title="Philip Selway">
+													<img  src="http://img.xiami.net/images/artistlogo/47/12789057347747_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/76826" title="">
+													<strong>Philip Selway
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放Philip Selway的电台" href="http://www.xiami.com/radio/play/type/5/oid/76826" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United Kingdom 英国">United Kingdom 英国</span>
+																							</p>
+											<!--<p class="counts">0张专辑 | 407位粉丝</p>
+										-->
+									</div>
+								</li>
+																	<li class="hor-list-item m15">
+										<div class="artist_item100_block">
+											<p class="buddy">
+												<a target="_blank" class="artist100" href="http://www.xiami.com/artist/23402" title="Thom Yorke">
+													<img  src="http://img.xiami.net/images/artistlogo/81/13617815362881_1.jpg" width="100" height="100" alt="" />
+												</a>
+											</p>
+											<p class="name">
+												<a  class="title" href="http://www.xiami.com/artist/23402" title="汤姆·约克">
+													<strong>Thom Yorke
+																												<span class="singer_names">(汤姆·约克)</span>
+																											</strong> 
+												</a> <b class="ico_radio ele_inline mah"><a title="播放Thom Yorke的电台" href="http://www.xiami.com/radio/play/type/5/oid/23402" target="_blank">电台</a></b> 
+																								<span class="singer_region" title="United Kingdom 英国">United Kingdom 英国</span>
+																							</p>
+											<!--<p class="counts">4张专辑 | 6506位粉丝</p>
+										-->
+									</div>
+								</li>
+															</ul>
+						</div>
+					</div>
+									</div>
+								<!--collect-->
+								<div class="search_result_box search_result_box_collect" data-spm="23310005">
+					<h5>精选集</h5>
+					<div class="result_main">
+						<!--block-->
+						<div class="collectBlock_list">
+							<ul class="clearfix">						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/5397941" title="人人都爱Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/941/41/5397941_1309600031_1.jpg"  alt="" /></span></p>
+								<p class="name">人人都爱<b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('5397941')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/2868044" title="">加加林卫星</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/13226919" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/919/19/13226919_1348190187_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('13226919')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/1135099" title="">Jim   Fly</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/2272557" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/57/57/22725571303611630_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('2272557')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/738074" title="">大久</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/9610856" title="Radiohead精选">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/856/56/9610856_1328193683_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b>精选</p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('9610856')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/284231" title="">؟　</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/8382230" title="Radiohead精选">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/230/30/8382230_1321462523_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b>精选</p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('8382230')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/3574402" title="">laywine</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/4538589" title="Best of Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/89/89/45385891303474973_1.jpg"  alt="" /></span></p>
+								<p class="name">Best of <b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('4538589')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/977591" title="">breaze</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/27929574" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/574/74/27929574_1390560668_LnS5_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('27929574')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/31161643" title="">Lu-An</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/11630618" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/618/18/11630618_1339584392_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('11630618')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/9461571" title="">C\'estLaVie</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/3247271" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/271/71/32472711295952316_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('3247271')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/2471901" title="">Spike</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/9758488" title="radiohead。">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/488/88/9758488_1352193622_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">radiohead</b>。</p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('9758488')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/3581084" title="">繁华拢是梦</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/38497949" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/949/49/38497949_1418559505_Fdj6_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('38497949')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/40263991" title="">尉迟y伊月</a>
+								
+								
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collect_item100_block">
+							<a class="info"  href="http://www.xiami.com/collect/31119704" title="Radiohead">
+								<p class="cover"><span><img src="http://img.xiami.net/images/collect/704/4/31119704_1399918250_H6T6_1.jpg"  alt="" /></span></p>
+								<p class="name"><b class="key_red">Radiohead</b></p>
+								</a>
+								<b class="ico_cd ele_inline"><a title="" onclick="playcollect('31119704')" href="javascript:void(0)">试听</a></b>
+								
+								<p class="author">by<a href="http://www.xiami.com/u/36379249" title="">heroincat</a>
+								
+								
+								</p>
+							</div>
+						</li>
+     </ul>
+						</div>
+						<!--block-->
+
+						<!--page end-->
+					</div>
+										<span class="y_more">
+						<a href="http://www.xiami.com/search/collect?key=radiohead" title="">更多精选集(432)</a>
+					</span>
+									</div>
+							</div>
+					</div>
+		</div>
+		<div class="chnl_right" data-spm="23309993">
+
+			<div class="add2xiami_bt">
+				<p>
+					<a href="http://www.xiami.com/wiki/addalbum" title="">添加虾米还没有的专辑</a>
+				</p>
+				<p>
+					<a href="http://www.xiami.com/wiki/addartist" title="">添加虾米还没有的艺人</a>
+				</p>
+			</div>
+
+			<div class="add2xiami_bt">
+				<p>
+					<a href="http://www.xiami.com/song/tag/radiohead" title="">查看标签为radiohead的歌曲</a>
+				</p>
+				<p>
+					<a href="http://www.xiami.com/artist/tag/radiohead" title="">查看标签为radiohead的艺人</a>
+				</p>
+			</div>
+			<div id="search_relate_musician" style="display:none;">
+				<h4>你可能会感兴趣的音乐人</h4>
+				<div class="common_sec">
+					<ul id="related_musician"></ul>
+				</div>
+			</div>
+			<div id="hot_events_show" class="blank30">
+				<script>show_hot_events('search-index');  //推荐专题展示</script>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!--content end-->
+</div>
+
+
+
+
+<script language="javascript">
+var matched_artist_id = '10454';
+var home_site = 'http://www.xiami.com';
+var subject_type = 'artist';
+var subject_artist_id = '10454';
+var subject_album_id = '';
+
+
+$(document).ready(function(){
+	if(subject_artist_id!='' && subject_type=='artist'){
+		$.getJSON('/count/getplaycount',{'id':subject_artist_id,'type':'artist'},function(data){
+			$('#play_count_num').html(data.plays);
+		});			
+		$.getJSON('/search/search-subject',{'id':subject_artist_id,'type':'artist'},function(data){
+			var content = '';
+			$('#artist_musicians').html(data.musicians);
+			$('#artist_comment_num').html(data.count_comment);
+			$('#artist_hot_play').click(function(){
+				   play(data.hotsongs);
+			});		
+			if(data.styles){
+	        	$.each(data.styles,function(i,styles){
+	        		content += '<a href="/genre/detail/';
+	        		if(styles.same_genre!=0){
+	        			content += 'gid/'+styles.same_genre;
+	        		}else{
+	        			content += 'sid/'+styles.style_id;
+	        		}
+	        		content += '?from=searchsubject" target="_blank">';
+	        		if(styles.name_cn){
+	        			content += styles.name_cn+"&nbsp;";
+	        		}
+	        		content += styles.name+'</a>,';	        	
+	        	});
+	        	$('#artist_styles_name').html('风格：');
+	        	$('#artist_styles').append(content.slice(0,-1));
+			}
+		});			
+	}
+	if(subject_album_id!='' && subject_type=='album'){
+		$.getJSON('/search/search-subject',{'id':subject_album_id,'type':'album'},function(data){
+			$('#album_comment_num').html(data.count_comment);
+			$('#album_collect_num').html(data.collects);
+			$('#album_category').html(data.categoryName);
+			$('#album_grade').html(data.gradeStat.grade);
+			$('#album_width').width(data.gradeStat.width);
+			$('#album_grade_count').html(data.gradeStat.grade_count);
+		});			
+	}	
+	
+    $.getJSON('/ajax/rec-musician',{artist_id:matched_artist_id},function(data) {
+        var related_musician_count = 0;
+        $.each(data,function(i,musician){
+            related_musician_count++;
+            var content = '<li><div class="group_item55_side">';
+            content += '<p class="cover"><a href="'+home_site+'/artist/'+musician.artist_id+'" title="'+musician.name+'"><img src="'+(musician.logo?musician.logo:'res/img/default/cd55.gif')+'"  width="55" height="55"/></a></p>';
+            content += '<strong><a href="'+home_site+'/artist/'+musician.artist_id+'" title="'+musician.name+'" name_card="'+musician.musician_uid+'" >'+musician.name+'</a></strong>';
+            content += ' <a href="http://i.xiami.com" target="_blank" title="虾米音乐人" style="display:inline" ><i class="G_ico12 icon_v12"></i></a>';
+            content += '<p class="count count_item">'+musician.count_likes+'位粉丝</p></div></li>';
+            $('#related_musician').append(content);
+        });
+        if(related_musician_count>0){
+            $('#search_relate_musician').show();
+        }
+    });
+
+
+
+	$(".album .image").hover(function(){
+
+		$(this).find('i').show();
+		$(this).find('b').show();
+		$(this).find('dl').show();
+
+		$(this).find('dl').hover(function(){
+			$(this).find('dd').show();
+		},function(){
+			$(this).find('dd').hide();
+		});
+
+	},function(){
+
+		$(this).find('i').hide();
+		$(this).find('b').hide();
+		$(this).find('dl').hide();
+
+	});
+
+	$(".artist .image").hover(function(){
+
+		$(this).find('i').show();
+		$(this).find('dl').show();
+
+		$(this).find('dl').hover(function(){
+			$(this).find('dd').show();
+		},function(){
+			$(this).find('dd').hide();
+		});
+
+	},function(){
+
+		$(this).find('i').hide();
+		$(this).find('dl').hide();
+
+	});
+
+
+});
+function search_focus(condition){
+	switch(condition) {
+		case 'click':if($('#search_text').val()==$('#search_text').attr('title')){
+						$('#search_text').val('');
+						$('#search_text').removeClass('grey');
+						$("#musicsearch").addClass("hasword");
+					 }else {
+						$('#search_text').removeClass('grey');
+						$("#musicsearch").addClass("hasword");
+					 }
+					 break;
+		case 'blur':if($('#search_text').val()==""){
+						$('#search_text').val($('#search_text').attr('title'));
+						$("#musicsearch").removeClass("hasword");
+						$('#search_text').addClass("grey");
+					}
+					break;
+		default:if($('#search_text').val()==$('#search_text').attr('title')){
+					$('#search_text').val('');
+					$('#search_text').removeClass('grey');
+					$("#musicsearch").addClass("hasword");
+				}
+	}
+}
+</script>
+
+
+<style>
+	.sitemap dl dd a{
+		background: none;
+		padding: 0;
+	}
+	
+	.sitemap dl dd{
+		padding: 0;
+		line-height: 22px;
+	}
+
+	.sitemap dl{
+		margin: 0;
+	}
+	.sitemap dl dt{ 
+	font-size: 12px;
+	line-height: 22px;
+	}
+	#footer {zoom:1;}
+</style>
+
+
+<div id="footer" data-spm="1110930425">
+	<div class="gap">
+	<div class="wrapper">
+		<div class="content">
+			<div class="sitemap">
+				
+				<dl>
+					<dt>关于</dt>
+					<dd><a title="关于我们" href="http://www.xiami.com/about">关于我们</a></dd>
+					<dd><a title="虾米招聘" href="http://www.xiami.com/job">虾米招聘</a><sup class="hot"></sup></dd>
+										<dd><a title="独立音乐人合作" href="http://www.xiami.com/musician-contact">独立音乐人合作</a></dd>
+					<dd><a title="联系我们" href="http://www.xiami.com/contact">联系我们</a></dd>
+					<dd><a title="友情链接" href="http://www.xiami.com/links">友情链接</a></dd>
+				</dl>
+				
+				<dl>
+					<dt>特色服务</dt>
+					<dd><a title="虾米 VIP" href="http://www.xiami.com/vip">虾米 VIP</a></dd>
+					<dd><a title="音乐达人" href="http://www.xiami.com/relation/talentcollect">音乐达人</a></dd>
+					<dd><a title="虾米小组" href="http://www.xiami.com/group">虾米小组</a></dd>
+					<dd><a title="虾米 LOOP" href="http://loop.xiami.com/">虾米 LOOP</a></dd>
+					<dd><a title="虾米播播" href="http://www.xiami.com/widget">虾米播播</a></dd>
+					<dd><a title="音乐专题" href="http://www.xiami.com/events">音乐专题</a></dd>
+										
+				</dl>
+				
+				<dl>
+					<dt>虾米云音乐</dt>
+					<dd><a title="虾米 for iPhone" href="http://www.xiami.com/apps/iphone">虾米 for iPhone</a><sup class="hot"></sup></dd>
+					<dd><a title="虾米 for Android" href="http://www.xiami.com/apps/android">虾米 for Android</a></dd>
+					<dd><a title="虾米 for Windows" href="http://www.xiami.com/apps/win">虾米 for Windows</a></dd>
+					<dd><a title="虾米 for Mac" href="http://www.xiami.com/apps/mac">虾米 for Mac</a></dd>
+					<dd><a title="虾米 for iPad" href="http://www.xiami.com/apps/ipad">虾米 for iPad</a></dd>
+				</dl>
+
+				
+				<dl>
+					<dt>更多</dt>
+					<dd><a title="分类找歌" href="http://www.xiami.com/music/category">分类找歌</a></dd>
+					<dd><a title="帮助中心" href="http://www.xiami.com/websitehelp">帮助中心</a></dd>
+					<dd><a title="添加虾米还没有的资料" href="http://www.xiami.com/wiki/addalbum">添加虾米还没有的资料</a></dd>
+					<dd><a title="提交大家想要的专辑" href="http://www.xiami.com/music/want">提交大家想要的专辑</a></dd>
+					<dd><a title="给虾米提意见" href="http://www.xiami.com/group/join/id/10147/_xiamitoken/42387c99e126d9e9b6d57f61b4d63e55?done=/group/thread-new/id/10147">给虾米提意见</a></dd>
+					<dd><a title="虾传" href="http://www.xiami.com/software/allegro">虾传</a></dd>
+				</dl>
+			</div>
+				
+			<div class="cooperation">
+							</div>
+
+		</div>
+		<div class="ali_group">
+			<a href="//page.1688.com/shtml/about/ali_group1.shtml" target="_black">阿里巴巴集团</a>
+			<a href="//www.alibaba.com" target="_black">阿里巴巴国际站</a>
+			<a href="//www.1688.com" target="_black">阿里巴巴中国站</a>
+			<a href="//www.aliexpress.com" target="_black">全球速卖通</a>
+			<a href="//www.taobao.com" target="_black">淘宝网</a>
+			<a href="//www.tmall.com" target="_black">天猫</a>
+			<a href="//ju.taobao.com" target="_black">聚划算</a>
+			<a href="//www.etao.com" target="_black">一淘</a>
+			<a href="//www.alimama.com" target="_black">阿里妈妈</a>
+			<a href="//www.alitrip.com" target="_black">阿里旅行·去啊</a>
+			<a href="//www.aliyun.com" target="_black">阿里云计算</a>
+			<a href="//www.yunos.com" target="_black">YunOS</a>
+			<a href="//aliqin.tmall.com" target="_black">阿里通信</a>
+			<a href="//www.laiwang.com/" target="_black">来往</a>
+			<a href="//www.alipay.com" target="_black">支付宝</a>
+			<a href="//www.net.cn" target="_black">万网</a>
+			<a href="//www.autonavi.com/" target="_black">高德</a>
+			<a href="//www.uc.cn/" target="_black">优视</a>
+			<a href="//www.umeng.com/" target="_black">友盟</a>
+			<a href="//kanbox.com/" target="_black">酷盘</a>
+			<a href="//www.xiami.com" target="_black">虾米</a>
+			<a href="//www.ttpod.com/" target="_black">天天动听</a>
+		</div>
+		<div class="extra">
+			<div class="sns">
+				关注虾米： 
+				<a href="http://t.sina.com.cn/xiamixiamixiami" title="新浪微博"><b class="icon sina"></b></a>
+				<a href="http://page.renren.com/699099957/index" title="人人网"><b class="icon renren"></b></a>
+				<a href="http://new.qzone.qq.com/810167634" title="QQ 空间"><b class="icon qzone"></b></a>
+				<a href="http://t.qq.com/xiaxiaomi" title="腾讯微博"><b class="icon tqq"></b></a>
+								<a href="http://www.douban.com/people/xiaxiaomi" title="豆瓣"><b class="icon douban"></b></a>
+							</div>
+			
+			<div class="copyright">&copy; 2007 - <script>document.write(new Date().getFullYear());</script> <a href="http://www.xiami.com/">杭州缪斯客网络科技有限公司</a> - <a href="http://www.xiami.com/sitemap" title="网站地图">网站地图</a> <strong class="xiami_motto ti" title="give music a chance">"give music a chance"</strong><br /><a href="http://img.xiami.net/res/v3/img/wenwangwen.jpg" target="_blank">浙网文[2011]0012-005号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank" title="浙ICP备08103200号-2">浙ICP备08103200号-2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://img.xiami.net/res/v3/img/icp.jpg" target="_blank">经营许可证编号 浙B2-20110188</a>&nbsp;&nbsp;&nbsp;&nbsp;阿里巴巴旗下网站</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!-- #footer--> 
+
+<a id="gotop" href="javascript:void(0);" class="t_hide">Top</a>
+
+<div id="personal_hover" style="display:none;"></div>
+<textarea id="personal_hover_tpl" style="display:none;">
+	<div id="personal_hover_shadow" class="lightShadow"></div>
+	<div id="personal_hover_inner">
+	<a id="personal_hover_link" href="http://www.xiami.com/u/%uid%" title=" %gmt_access% "><img id="personal_hover_img" src="%avatar%" width="50" height="50" /></a>
+	<img class="hidden" id="personal_hover_pulser_img" src="http://img.xiami.net/res/img/default/loading50x50.gif" width="50" height="50" alt="" />
+	<div id="personal_trigger_bar">
+	<a class="personal_drop" id="personal_menu_down" href="javascript:;" title="">更多内容</a>
+	<div id="personal_menu_show" class="personal_buddy_menus" style="display:none;">
+	<span class="blank_block"></span>
+	<p id="personal_relationship_g"><span class="be_contacts"><strong>%nick_name%</strong></span></p>
+	<div id="personal_menu_other_div">
+		<a id="personal_o_index" class="blocks" href="http://www.xiami.com/u/%uid%" title="%nick_name%的个人主页">%nick_name%的个人主页</a>
+<!--		<a id="personal_o_minifeed"  class="blocks" href="http://www.xiami.com/space/feed/u/%uid%" title="近况">近况</a>-->
+		<a id="personal_o_library"  class="blocks" href="http://www.xiami.com/space/lib-song/u/%uid%" title="%nick_name%的音乐库">音乐库</a>
+        <a id="personal_o_recommend"  class="blocks" href="http://www.xiami.com/space/rec/u/%uid%" title="%nick_name%的分享">分享</a>
+        <a id="personal_o_contact"  class="blocks" href="http://www.xiami.com/space/following/u/%uid%" title="%nick_name%的关注和粉丝">关注/粉丝</a>
+		<a id="personal_o_collect"  class="blocks" href="http://www.xiami.com/space/collect/u/%uid%" title="%nick_name%的精选集">精选集</a>
+<!--		<a id="personal_o_charts"  class="blocks" href="http://www.xiami.com/space/charts/u/%uid%" title="个人排行榜">个人排行榜</a>-->
+		<a id="personal_o_topic"  class="blocks" href="http://www.xiami.com/space/group-thread/u/%uid%" title="%nick_name%参与过的话题">参与的话题</a>
+	</div>
+	<a id="personal_msgsned" class="blocks_out" href="http://www.xiami.com/member/sendpm?to_user_id=%uid%" title="发站内信">发站内信</a>
+	<a id="personal_block_usr" class="blocks_out" href="javascript:;" onclick="blacklist('%uid%');return false;" title="加入黑名单">加入黑名单</a>
+	<div id="person_menu_self_div"></div>
+	</div>
+	</div>
+	</div>
+</textarea>
+
+
+
+<script>
+;(function($){
+	$.fn.personalDropMenu = function(settings){
+		var defaults = {
+			menuDiv: '#personal_hover',
+			tplDiv: '#personal_hover_tpl',
+			dropdownArrow:'#personal_menu_down',
+			myUid: 0
+		};
+        
+		$.extend(defaults, settings);
+        
+		var $menuDiv,menuDiv_html,$tplDiv;
+		$menuDiv = $(defaults.menuDiv);
+		$tplDiv = $(defaults.tplDiv);
+		menuDiv_html = $tplDiv.val();//保存原始的html        
+		$menuDiv.bind('mouseleave',function(){$(this).hide();});
+		window.isFriendshipQueryed=false;
+		var friends;
+		var setFriendHtml = function(uid,$obj){
+			$obj.next().remove();
+			if(uid == defaults.myUid) {
+				$obj.html('<strong>你自己</strong>');
+				$menuDiv.find('#personal_block_usr').remove();
+				$menuDiv.find('#personal_msgsned').remove();
+			}else if(!friends){
+				$obj.after('<span class="be_stranger"><a href="javascript:;" onclick="attention('+uid+',1);">(加关注)</a></span>');
+			}else if(friends['f_'+uid] && friends['f_'+uid]=="1"){
+				$obj.after('<span class="be_stranger"> 已关注 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消关注)</a></span>');
+			}else if(friends['f_'+uid] && friends['f_'+uid]=="2"){
+				$obj.after('<span class="be_stranger"> 已关注 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消关注)</a></span>');
+			}else if(friends['f_'+uid] && friends['f_'+uid]=="3"){
+				$obj.after('<span class="be_stranger"> 已加入黑名单 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消)</a></span>');
+				$menuDiv.find('#personal_block_usr').remove();
+				$menuDiv.find('#personal_msgsned').remove();
+			}else{
+				$obj.after('<span class="be_stranger"><a href="javascript:;" onclick="attention('+uid+',1);">(加关注)</a></span>');
+			}
+		};
+        
+		return this.each(function(){
+			var $this;
+			$this = $(this);
+			$this.mouseover(function(){
+				var params ={
+					uid: /\d+/.exec($this.attr('href')),
+					avatar: $this.find('img').attr('src'),
+					nick_name:$this.attr('title'),
+					gmt_access:$this.attr('rel')
+				};
+				if(params.gmt_access!='') params.gmt_access = "来访时间: "+params.gmt_access;
+				var html = menuDiv_html.parseTpl(params);
+				//var rects = $this[0].getBoundingClientRect();
+				var rects = $this.offset();
+				var bodyRects = $('body')[0].getBoundingClientRect();
+				//var left = rects.left - bodyRects.left - 6;
+				//var top = rects.top - bodyRects.top - 6;
+				var left = rects.left - 6;
+				var top = rects.top - 6;
+				$menuDiv.css({'top':top,'left':left});
+				$menuDiv.html(html).show();
+				if(params.gmt_access=='') $menuDiv.find('#personal_hover_link').attr('title','');
+				$menuDiv.find(defaults.dropdownArrow).click(function(){
+					var $this = $(this);
+					var $next = $this.next();
+					$this.toggleClass('active')
+					$next.toggle();
+					if($next.css('display')!='block') return;
+					$relation = $next.find('.be_contacts');
+					if(params.uid ==defaults.myUid) {setFriendHtml(params.uid,$relation); return; }     
+					if(isFriendshipQueryed){ setFriendHtml(params.uid,$relation); return; }                    
+					if(!myUid) return;
+					$relation.after($loading2);
+					$.getJSON('/member/get-friends/_xiamitoken/'+_xiamitoken,function(data){
+						try{
+							$relation.next().remove();
+							if(data.status == 'failed'){return false;}
+							isFriendshipQueryed = true;
+							friends = data.friends;
+							setFriendHtml(params.uid,$relation);
+						}catch(e){alert('Warning:something wrong! Please retry!');return;}
+					});
+				});
+			});
+		});
+	};
+})(jQuery);
+
+
+// var myUid = parseInt('');
+// $('.personalDropDown').personalDropMenu({myUid:myUid});
+</script>
+
+<script>
+_xiamitoken = '42387c99e126d9e9b6d57f61b4d63e55';
+
+
+$(document).ready(function(){
+	$('body').click(function(e){
+		$(".ctrl_gears_more").addClass('hidden');
+		$(".bt_cdgears").removeClass('active');	
+	});
+	
+	$("#web_loading").remove();
+
+	$(".song_menu").mouseover(function() {
+		$(this).css('z-index','6').children('span').show();
+	}).mouseout(function() {
+		$(this).css('z-index','5').children('span').hide();
+	});
+
+	$(".bt_cdgears").mouseover(function(){$(this).addClass('active').next().removeClass('hidden').show();});
+	BackTop('gotop');
+	
+	// if ($.cookie('fools_day') != 1) {
+	// 	var now = new Date();
+	// 	var close_date = new Date('2012/4/2');
+	// 	var begin_date = new Date('2012/4/1');
+	// 	if (close_date.getTime()-now.getTime()>0 && now.getTime()-begin_date.getTime()>0) {
+	// 		var rabbit_hole = Math.ceil(Math.random()*4);
+	// 		if (rabbit_hole != 3) {
+	// 			setTimeout(function() {
+	// 				$.cookie('fools_day', 1 , { expires: 3, path: '/', domain: '.xiami.com'});
+	// 				location.href = '/event/heavenconcert';
+	// 			}, 3000);
+	// 		}
+	// 	}
+	// }
+});
+var BackTop=function(btnId){
+	var btn=document.getElementById(btnId);
+	var browserName=navigator.userAgent.toLowerCase();
+	if(/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName)){
+	    var d = document.body;
+	}else if(/webkit/i.test(browserName) && !this.chrome){
+		var d = document.body;
+	}else{
+	    var d = document.documentElement ? document.documentElement : document.body;
+	}
+	/*var d = document.documentElement ? document.documentElement : document.body;*/
+	window.onscroll=set;
+	btn.onclick=function (){
+		btn.className = 't_hide';
+		window.onscroll=null;
+		this.timer=setInterval(function(){
+			//d.scrollTop = 0;
+			d.scrollTop-=Math.ceil(d.scrollTop*0.8);
+			if(d.scrollTop==0) clearInterval(btn.timer,window.onscroll=set);
+		},10);
+	};
+	function set(){
+		btn.className = d.scrollTop >= 1200 ? 't_show' : 't_hide';
+	}
+};
+var checkFlash=function(a){var b='检测到您系统Flash插件版本过低,为了更好的使用虾米音乐,请升级您的Flash插件, <a href="http://get.adobe.com/cn/flashplayer/" target="_blank" style="color:#36c">马上升级</a>',c=function(){var a,c,b=document.body.children||document.body.childNodes;for(c=0;c<b.length;c++)if(1==b[c].nodeType){a=b[c];break}return a}(),d=function(){var c,a=navigator,b=0;if(a.plugins&&a.mimeTypes.length)c=navigator.plugins["Shockwave Flash"],c&&(b=c.description.replace(/.*\s(\d+\.\d+).*/,"$1"));else try{c=new window.ActiveXObject("ShockwaveFlash.ShockwaveFlash"),c&&(b=c.GetVariable("$version"))}catch(d){}return b}(),e=function(){var a=document.createElement("div");a.innerHTML=b,a.style.backgroundColor="#FFF9D7",a.style.borderBottom="1px solid #E3C823",a.style.fontWeight="bold",a.style.lineHeight="30px",a.style.textAlign="center",a.style.color="#f60",document.body.insertBefore(a,c)},f=d?d.match(/\d+/g):-1,g=f.length>0?f.join("."):0;return!g||parseInt(f[0],10)<a?(e(),!1):!0}(9);
+</script> 
+
+
+
+
+<div id="cnzz" style="display:none">
+<script type="text/javascript">
+(function (d) {
+var z1=d.createElement("script");z1.type="text/javascript";z1.async=true;
+var z2=d.createElement("script");z2.type="text/javascript";z2.async=true;
+z1.src=("https:"==d.location.protocol?"https://":"http://")+"s95.cnzz.com/stat.php?id=921634&web_id=921634";
+z2.src=("https:"==d.location.protocol?"https://":"http://")+"s16.cnzz.com/stat.php?id=2629111&web_id=2629111";
+d.getElementById("cnzz").appendChild(z1);
+d.getElementById("cnzz").appendChild(z2);
+})(document);
+</script>
+<!-- <script src='http://s95.cnzz.com/stat.php?id=921634&web_id=921634' language='JavaScript' charset='gb2312'></script> -->
+<!-- <script src="http://s16.cnzz.com/stat.php?id=2629111&web_id=2629111" language="JavaScript"></script> -->
+</div>
+
+
+
+<div id="dfp" style="display:none">
+<script>
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+//var node = document.getElementsByTagName('script')[0];
+//node.parentNode.insertBefore(gads, node);
+document.getElementById("dfp").appendChild(gads);
+})();
+</script>
+</div>
+
+
+<div style="background:#fff; margin: 0 auto;display:none;"><font style="font-size:12px; color:#fff;">Host: , Process All 0.0603s Memory:3463.21k <br></font></div>
+</body>
+</html>
