@@ -13,9 +13,9 @@ module Xiami
     it { should respond_to :artist_name }
     it { should respond_to :album_name }
 
-    describe '#new' do
+    describe '#fetch' do
       it 'parses data' do
-        song = Song.new('http://www.xiami.com/song/1773357685')
+        song = Song.fetch('http://www.xiami.com/song/1773357685')
 
         song.temporary_url.should == 'http://m5.file.xiami.com/516/37516/705574889/1773357685_15603838_l.mp3?auth_key=33b783883a2ffa9e9df48e5dd456ebad-1415232000-0-null'
 
@@ -33,21 +33,21 @@ module Xiami
       end
 
       it 'accepts song id as well' do
-        song = Song.new('1773357685')
+        song = Song.fetch('1773357685')
 
         song.album.id.should == 705574889
       end
 
       context 'when content contains html' do
         it 'unescapes' do
-          song = Song.new(1242697)
+          song = Song.fetch(1242697)
           song.album.name.should == "(What's the Story) Morning Glory?"
         end
       end
 
       context 'when parsing xml fails' do
         it 'parses html' do
-          song = Song.new(376054)
+          song = Song.fetch(376054)
           song.name.should == '她的睫毛'
           song.id.should == 376054
           song.album.id.should == 6650
@@ -59,7 +59,7 @@ module Xiami
 
         context 'with song id 1770769001' do
           it 'pass' do
-            song = Song.new(1770769001)
+            song = Song.fetch(1770769001)
             song.artist.id.should == nil
             song.artist.name.should == '梁博'
           end
@@ -67,7 +67,7 @@ module Xiami
 
         context 'with song id 15914' do
           it 'pass' do
-            song = Song.new(15914)
+            song = Song.fetch(15914)
             song.artist.id.should == 521
             song.artist.name.should == '李嘉强'
             song.album.cover_urls.count.should == 4
