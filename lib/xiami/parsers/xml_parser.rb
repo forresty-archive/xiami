@@ -1,4 +1,5 @@
 require "nokogiri"
+require "cgi"
 
 module Xiami
   module Parser

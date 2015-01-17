@@ -1,3 +1,5 @@
+require "nokogiri"
+
 module Xiami
   module Parser
     class HTMLParser

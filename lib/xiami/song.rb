@@ -1,6 +1,4 @@
-require "httpclient"
-require "cgi"
-require 'nokogiri'
+require "httparty"
 require 'fastimage'
 
 module Xiami
@@ -30,13 +28,13 @@ module Xiami
       end
 
       def parse_html_page!(id)
-        html = HTTPClient.new.get("http://www.xiami.com/song/#{id}").body
+        html = HTTParty.get("http://www.xiami.com/song/#{id}").body
 
         Parser::HTMLParser.parse(html)
       end
 
       def parse_xml_info!(id)
-        xml = HTTPClient.new.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
+        xml = HTTParty.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
 
         Parser::XMLParser.parse(xml)
       end
