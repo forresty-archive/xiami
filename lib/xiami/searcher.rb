@@ -39,6 +39,8 @@ module Xiami
     module ClassMethods
       def search(query)
         new(query).search
+      rescue
+        []
       end
     end
 
