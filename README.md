@@ -77,6 +77,10 @@ Xiami::Song.fetch 42951
 
 ## Changelog
 
+### 0.3.0 / 2015-01-17
+
+- changed `Song.new` interface, now it will not fetch song remotely
+
 ### 0.2.0 / 2015-01-12
 
 - fetch all available album arts and default to the largest one
