@@ -1,4 +1,3 @@
-# originally from xiami_sauce gem
 require "httpclient"
 require "cgi"
 require 'nokogiri'
@@ -15,11 +14,14 @@ module Xiami
       def fetch(song_url)
         song_id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
 
-        _fetch(song_id)
+        fetch!(song_id)
+      rescue
+        nil
       end
 
-      def _fetch(id)
+      def fetch!(id)
         song = parse_xml_info!(id) rescue parse_html_page!(id)
+
         song.id = id
 
         song.fetch_all_album_arts!
@@ -28,25 +30,16 @@ module Xiami
       end
 
       def parse_html_page!(id)
-        html = html_page(id)
+        html = HTTPClient.new.get("http://www.xiami.com/song/#{id}").body
+
         Parser::HTMLParser.parse(html)
       end
 
       def parse_xml_info!(id)
-        xml = info_xml(id)
+        xml = HTTPClient.new.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
+
         Parser::XMLParser.parse(xml)
       end
-
-      def html_page(id)
-        HTTPClient.new.get("http://www.xiami.com/song/#{id}").body
-      end
-
-      def info_xml(id)
-        HTTPClient.new.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
-      end
-    end
-
-    def initialize(song_url = nil)
     end
 
     def fetch_all_album_arts!
