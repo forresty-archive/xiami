@@ -27,8 +27,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Search for songs
+
 ```ruby
-Xiami::Song.new 42951
+Xiami::Song.search 'Radiohead'
+```
+
+### Fetch song
+
+```ruby
+Xiami::Song.fetch 42951
 
 #<Xiami::Song:0x007fc85aad82a0
  @album=
@@ -55,8 +63,6 @@ Xiami::Song.new 42951
   "http://m5.file.xiami.com/724/724/3488/42951_28196_l.mp3?auth_key=8ce0466ab660aa7d2f35d914f8cdfc67-1421193600-0-null">
 ```
 
-![http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg](http://img.xiami.net/images/album/img24/724/34881343112513_4.jpg)
-
 ## Credits
 
 - [xiami_sauce gem](https://github.com/ranmocy/xiami_sauce)
@@ -81,15 +87,7 @@ Xiami::Song.new 42951
 
 ### 0.1.3 / 2015-01-12
 
-- parse HTML will not fail when artist has no ID
-
-### 0.1.2 / 2015-01-12
-
 - parse HTML when XML fails
-
-### 0.1.1 / 2015-01-05
-
-- Xiami.fetch_large_album_art
 
 ### 0.1.0 / 2014-12-17
 
