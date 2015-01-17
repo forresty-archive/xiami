@@ -3,9 +3,13 @@ require "nokogiri"
 module Xiami
   module Parser
     class HTMLParser
-      def parse(html_content)
+      def initialize(html_content)
+        @html_content = html_content
+      end
+
+      def parse
         song = Song.new.tap do |song|
-          doc = Nokogiri::HTML(html_content)
+          doc = Nokogiri::HTML(@html_content)
 
           song.name = doc.at_css('#title h1').content
 
@@ -32,7 +36,7 @@ module Xiami
 
       module ClassMethods
         def parse(html_content)
-          new.parse(html_content)
+          new(html_content).parse
         end
       end
 

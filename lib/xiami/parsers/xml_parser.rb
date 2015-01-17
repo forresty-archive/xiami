@@ -6,7 +6,7 @@ module Xiami
     class XMLParser
       module ClassMethods
         def parse(xml_content)
-          new.parse(xml_content)
+          new(xml_content).parse
         end
       end
 
@@ -14,9 +14,13 @@ module Xiami
         include ClassMethods
       end
 
-      def parse(xml_content)
+      def initialize(xml_content)
+        @xml_content = xml_content
+      end
+
+      def parse
         song = Song.new.tap do |song|
-          doc  = Nokogiri::XML(xml_content)
+          doc  = Nokogiri::XML(@xml_content)
 
           song.id = doc.at_css('track song_id').content.to_i
           song.name = CGI.unescapeHTML(doc.at_css('track song_name').content)
