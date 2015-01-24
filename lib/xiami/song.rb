@@ -15,8 +15,7 @@ module Xiami
       def fetch(song_url)
         song_id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
 
-        fetch!(song_id)
-
+        fetch!(song_id) rescue nil
       end
 
       def fetch!(id)
