@@ -126,6 +126,10 @@ Xiami::Song.fetch 42951
 
 ## Changelog
 
+### 0.3.1 / 2015-01-25
+
+- Song.search
+
 ### 0.3.0 / 2015-01-17
 
 - changed `Song.new` interface, now it will not fetch song remotely
