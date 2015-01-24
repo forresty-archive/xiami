@@ -1,8 +1,7 @@
 require_relative "xiami/version"
 
-require_relative 'xiami/parsers/xml_parser'
-require_relative 'xiami/parsers/html_parser'
-
+require_relative "xiami/services"
+require_relative 'xiami/parsers'
 require_relative 'xiami/searcher'
 require_relative 'xiami/cover_fetcher'
 

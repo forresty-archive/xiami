@@ -31,9 +31,7 @@ module Xiami
     end
 
     def html_content
-      user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2"
-
-      HTTParty.post("http://www.xiami.com/search?key=#{URI.encode(query)}&pos=1", headers: { "User-Agent" => user_agent }).body
+      Xiami::Service::FetchXiamiQuery.call(query: query)
     end
 
     module ClassMethods
