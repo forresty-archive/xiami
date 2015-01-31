@@ -31,3 +31,5 @@ stub_request(:any, song_pattern).to_return(song_handler)
 
 images_handler = lambda { |request| { body: fixture(request.uri.path.match(/(.+)\.jpg$/)[1], 'jpg') } }
 stub_request(:any, /img\.xiami\.net/).to_return(images_handler)
+
+HTTPI.logger = Logger.new('/dev/null')

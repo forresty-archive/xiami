@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'nokogiri'
   spec.add_runtime_dependency 'fastimage'
-  spec.add_runtime_dependency 'httparty'
+  spec.add_runtime_dependency 'httpi'
+  spec.add_runtime_dependency 'curb'
   spec.add_runtime_dependency 'virtus'
 end
