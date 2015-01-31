@@ -1,5 +1,5 @@
-require "httparty"
 require "nokogiri"
+require_relative "http_client"
 
 module Xiami
   class Searcher

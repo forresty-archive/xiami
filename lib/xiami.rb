@@ -1,5 +1,6 @@
 require_relative "xiami/version"
 
+require_relative "xiami/http_client"
 require_relative "xiami/services"
 require_relative 'xiami/parsers'
 require_relative 'xiami/searcher'

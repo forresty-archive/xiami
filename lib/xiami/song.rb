@@ -1,4 +1,4 @@
-require "httparty"
+require_relative "http_client"
 
 module Xiami
   class Song
@@ -29,13 +29,13 @@ module Xiami
       end
 
       def parse_html_page!(id)
-        html = HTTParty.get("http://www.xiami.com/song/#{id}").body
+        html = HTTPClient.get_content("http://www.xiami.com/song/#{id}")
 
         Parser::HTMLParser.parse(html)
       end
 
       def parse_xml_info!(id)
-        xml = HTTParty.get("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}").body
+        xml = HTTPClient.get_content("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}")
 
         Parser::XMLParser.parse(xml)
       end
