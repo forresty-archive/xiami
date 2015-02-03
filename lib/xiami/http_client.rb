@@ -6,6 +6,10 @@ module Xiami
     module ClassMethods
       HTTPI.adapter = :curb
 
+      def proxy=(proxy_url)
+        @proxy_url = proxy_url
+      end
+
       def get_content(url)
         get(url).body
       end
@@ -26,7 +30,11 @@ module Xiami
       private
 
       def prepare_request(url)
-        HTTPI::Request.new(url)
+        request = HTTPI::Request.new(url)
+
+        request.proxy = @proxy_url if @proxy_url
+
+        request
       end
 
       def user_agent
