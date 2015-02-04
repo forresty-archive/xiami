@@ -126,6 +126,10 @@ Xiami::Song.fetch 42951
 
 ## Changelog
 
+### 0.4.0 / 2015-02-04
+
+- use HTTPI, Virtus and allow http proxy setting
+
 ### 0.3.1 / 2015-01-25
 
 - Song.search
