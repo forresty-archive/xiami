@@ -2,14 +2,17 @@ require_relative "http_client"
 
 module Xiami
   class Song
-    attr_accessor :id, :name, :temporary_url
-    attr_accessor :artist, :album
+    include Virtus::Model
 
-    attr_accessor :local_file_path
+    attribute :id,            Integer
+    attribute :name,          String
+    attribute :temporary_url, String
+    attribute :artist,        Artist
+    attribute :album,         Album
 
     class << self
       def search(query)
-        Searcher.search(query)
+        Searcher.search(query: query)
       end
 
       def fetch(song_url)

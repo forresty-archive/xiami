@@ -1,9 +1,14 @@
 module Xiami
   class Album
-    attr_accessor :name, :id, :cover_url, :cover_urls
+    include Virtus::Model
+
+    attribute :name,       String
+    attribute :id,         Integer
+    attribute :cover_url,  String
+    attribute :cover_urls, Array[String]
 
     def initialize
-      @cover_urls = []
+      self.cover_urls = []
     end
   end
 end
