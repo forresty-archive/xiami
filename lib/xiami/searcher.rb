@@ -1,13 +1,12 @@
 require "nokogiri"
 require_relative "http_client"
+require 'virtus'
 
 module Xiami
   class Searcher
-    attr_reader :query
+    include Virtus::Model
 
-    def initialize(query)
-      @query = query
-    end
+    attribute :query, String
 
     def search
       result = []

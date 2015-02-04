@@ -6,8 +6,6 @@ module Xiami
     it { should respond_to :name }
     it { should respond_to :artist }
     it { should respond_to :album }
-    it { should respond_to :local_file_path }
-    it { should respond_to :local_file_path= }
 
     it { should respond_to :title }
     it { should respond_to :artist_name }

@@ -1,5 +1,8 @@
 module Xiami
   class Artist
-    attr_accessor :name, :id
+    include Virtus::Model
+
+    attribute :id,   Integer
+    attribute :name, String
   end
 end
