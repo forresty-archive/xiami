@@ -13,7 +13,7 @@ module Xiami
       private
 
       def url
-        "http://www.xiami.com/search?key=#{URI.encode(query)}&pos=1"
+        "http://www.xiami.com/search?key=#{CGI.escape(query)}&pos=1"
       end
     end
   end
