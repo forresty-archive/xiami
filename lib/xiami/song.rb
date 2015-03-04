@@ -45,7 +45,7 @@ module Xiami
     end
 
     def fetch_all_album_arts!
-      results = CoverFetcher.fetch_all(album.cover_url)
+      results = CoverFetcher.fetch_all(album.cover_url, HTTPClient.proxy)
 
       album.cover_urls = results[:cover_urls]
       album.cover_url = results[:cover_url]

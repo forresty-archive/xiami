@@ -10,6 +10,10 @@ module Xiami
         @proxy_url = proxy_url
       end
 
+      def proxy
+        @proxy_url
+      end
+
       def get_content(url)
         get(url).body
       end
