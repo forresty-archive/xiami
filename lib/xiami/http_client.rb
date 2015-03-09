@@ -15,11 +15,17 @@ module Xiami
       end
 
       def get_content(url)
-        get(url).body
+        content = get(url).body
+
+        if match = content.match(%r{<script>document.cookie="sec=([^;]+)})
+          content = get(url, 'Cookie' => "sec=#{match[1]}").body
+        end
+
+        content
       end
 
-      def get(url)
-        request = prepare_request(url)
+      def get(url, options={})
+        request = prepare_request(url, options)
 
         HTTPI.get(request)
       end
@@ -33,8 +39,12 @@ module Xiami
 
       private
 
-      def prepare_request(url)
+      def prepare_request(url, options={})
         request = HTTPI::Request.new(url)
+
+        options.each do |key, value|
+          request.headers[key] = value
+        end
 
         request.proxy = @proxy_url if @proxy_url && @proxy_url.length > 0
 

@@ -10,6 +10,10 @@ retrieve songs from xiami.com
 
 ## Installation
 
+depends on [curb](https://github.com/taf2/curb) gem, on Ubuntu install its dependencies with
+
+`$ sudo apt-get install libcurl3 libcurl3-gnutls libcurl4-openssl-dev`
+
 Add this line to your application's Gemfile:
 
 ```ruby

@@ -22,4 +22,4 @@ group :development, :test do
   gem 'coveralls', require: false
 end
 
-gem 'fastimage', github: 'forresty/fastimage', branch: 'proxy-option'
+gem 'fastimage', '~> 1.6.8'
