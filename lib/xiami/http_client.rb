@@ -17,7 +17,7 @@ module Xiami
       def get_content(url)
         content = get(url).body
 
-        if match = condition.match(%r{<script>document.cookie="sec=([^;]+)})
+        if match = content.match(%r{<script>document.cookie="sec=([^;]+)})
           content = get(url, 'Cookie' => "sec=#{match[1]}").body
         end
 
