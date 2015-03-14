@@ -1,5 +1,4 @@
-require "simplecov"
-SimpleCov.start
+require "coco"
 
 require "xiami"
 

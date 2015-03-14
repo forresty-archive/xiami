@@ -18,7 +18,7 @@ group :development, :test do
   gem 'webmock'
 
   # coverage
-  gem 'simplecov', require: false
+  gem 'coco', require: false
   gem 'coveralls', require: false
 end
 
