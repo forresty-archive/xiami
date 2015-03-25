@@ -3,13 +3,13 @@ require "spec_helper"
 
 module Xiami
   describe Song do
-    it { should respond_to :name }
-    it { should respond_to :artist }
-    it { should respond_to :album }
+    it { is_expected.to respond_to :name }
+    it { is_expected.to respond_to :artist }
+    it { is_expected.to respond_to :album }
 
-    it { should respond_to :title }
-    it { should respond_to :artist_name }
-    it { should respond_to :album_name }
+    it { is_expected.to respond_to :title }
+    it { is_expected.to respond_to :artist_name }
+    it { is_expected.to respond_to :album_name }
 
     describe '#fetch' do
       it 'parses data' do
