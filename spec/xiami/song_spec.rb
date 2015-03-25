@@ -15,7 +15,7 @@ module Xiami
       it 'parses data' do
         song = Song.fetch('http://www.xiami.com/song/1773357685')
 
-        expect(song.temporary_url).to eq('http://m5.file.xiami.com/516/37516/705574889/1773357685_15603838_l.mp3?auth_key=33b783883a2ffa9e9df48e5dd456ebad-1415232000-0-null')
+        expect(song.temporary_url).to match(/http:\/\/m5.file.xiami.com\/516\/37516\/705574889\/1773357685_15603838_l.mp3\?auth_key=[\d\w]+-\d+-0-null/)
 
         expect(song.name).to eq('Escape (The Pina Colada Song)')
         expect(song.title).to eq('Escape (The Pina Colada Song)')

@@ -26,6 +26,7 @@ module Xiami
 
       def get(url, options={})
         request = prepare_request(url, options)
+        request.headers['User-Agent'] = user_agent
 
         HTTPI.get(request)
       end
