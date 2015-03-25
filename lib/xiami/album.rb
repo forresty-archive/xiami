@@ -1,11 +1,12 @@
 module Xiami
   class Album
-    include Virtus::Model
+    include Virtus.model(finalize: false)
 
     attribute :name,       String
     attribute :id,         Integer
     attribute :cover_url,  String
     attribute :cover_urls, Array[String]
+    attribute :songs,      Array['Xiami::Song']
 
     def initialize
       self.cover_urls = []

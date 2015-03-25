@@ -9,3 +9,5 @@ require_relative 'xiami/cover_fetcher'
 require_relative "xiami/album"
 require_relative "xiami/artist"
 require_relative "xiami/song"
+
+Virtus.finalize

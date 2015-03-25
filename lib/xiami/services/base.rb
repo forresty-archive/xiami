@@ -1,4 +1,5 @@
 require "virtus"
+require "inflecto"
 
 module Xiami
   module Service

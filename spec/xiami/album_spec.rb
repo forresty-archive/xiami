@@ -5,6 +5,7 @@ module Xiami
     it { is_expected.to respond_to :name }
     it { is_expected.to respond_to :id }
     it { is_expected.to respond_to :cover_urls }
+    it { is_expected.to respond_to :songs }
 
     describe 'class methods' do
       subject { Album }

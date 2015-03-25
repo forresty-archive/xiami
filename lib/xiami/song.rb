@@ -4,13 +4,13 @@ require_relative 'album'
 
 module Xiami
   class Song
-    include Virtus::Model
+    include Virtus.model(finalize: false)
 
     attribute :id,            Integer
     attribute :name,          String
     attribute :temporary_url, String
     attribute :artist,        Artist
-    attribute :album,         Album
+    attribute :album,         'Xiami::Album'
 
     class << self
       def search(query)
