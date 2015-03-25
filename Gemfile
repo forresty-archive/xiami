@@ -10,7 +10,7 @@ group :development, :test do
   gem 'nokogiri'
 
   # rspec and guard
-  gem 'rspec', '~> 2.14.0'
+  gem 'rspec', '~> 2.99.0'
   gem 'guard', '~> 2.8.2'
   gem 'guard-rspec'
 
