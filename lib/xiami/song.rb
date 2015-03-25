@@ -1,4 +1,6 @@
 require_relative "http_client"
+require_relative 'artist'
+require_relative 'album'
 
 module Xiami
   class Song
