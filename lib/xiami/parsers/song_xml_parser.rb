@@ -3,7 +3,7 @@ require "cgi"
 
 module Xiami
   module Parser
-    class XMLParser
+    class SongXMLParser
       module ClassMethods
         def parse(xml_content)
           new(xml_content).parse

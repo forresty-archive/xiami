@@ -2,7 +2,7 @@ require "nokogiri"
 
 module Xiami
   module Parser
-    class HTMLParser
+    class SongHTMLParser
       def initialize(html_content)
         @html_content = html_content
       end

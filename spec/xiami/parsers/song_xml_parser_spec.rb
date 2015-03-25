@@ -2,7 +2,7 @@ require "spec_helper"
 
 module Xiami
   module Parser
-    describe XMLParser do
+    describe SongXMLParser do
     end
   end
 end

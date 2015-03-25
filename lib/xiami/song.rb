@@ -36,13 +36,13 @@ module Xiami
       def parse_html_page!(id)
         html = HTTPClient.get_content("http://www.xiami.com/song/#{id}")
 
-        Parser::HTMLParser.parse(html)
+        Parser::SongHTMLParser.parse(html)
       end
 
       def parse_xml_info!(id)
         xml = HTTPClient.get_content("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}")
 
-        Parser::XMLParser.parse(xml)
+        Parser::SongXMLParser.parse(xml)
       end
     end
 
