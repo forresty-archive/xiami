@@ -10,8 +10,8 @@ group :development, :test do
   gem 'nokogiri'
 
   # rspec and guard
-  gem 'rspec', '~> 2.99.0'
-  gem 'guard', '~> 2.8.2'
+  gem 'rspec', '~> 3.0'
+  gem 'guard'
   gem 'guard-rspec'
 
   # mock HTTP
