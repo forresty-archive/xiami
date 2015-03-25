@@ -18,7 +18,9 @@ module Xiami
       end
 
       def fetch!(album_id)
+        html = HTTPClient.get_content("http://www.xiami.com/album/#{album_id}")
 
+        Parser::AlbumHTMLParser.parse(html)
       end
     end
 
