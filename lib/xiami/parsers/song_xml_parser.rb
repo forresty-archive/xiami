@@ -23,18 +23,18 @@ module Xiami
           doc  = Nokogiri::XML(@xml_content)
 
           song.id = doc.at_css('track song_id').content.to_i
-          song.name = CGI.unescapeHTML(doc.at_css('track song_name').content)
+          song.name = CGI.unescapeHTML(doc.at_css('track song_name').content).strip
 
           song.album = Album.new.tap do |album|
             album.id = doc.at_css('track album_id').content.to_i
-            album.name = CGI.unescapeHTML(doc.at_css('track album_name').content)
+            album.name = CGI.unescapeHTML(doc.at_css('track album_name').content).strip
 
             album.cover_url = doc.at_css('track album_cover').content
           end
 
           song.artist = Artist.new.tap do |artist|
             artist.id = doc.at_css('track artist_id').content.to_i
-            artist.name = CGI.unescapeHTML(doc.at_css('track artist_name').content)
+            artist.name = CGI.unescapeHTML(doc.at_css('track artist_name').content).strip
           end
 
           song.temporary_url = sospa(doc.at_css('track location').content)
