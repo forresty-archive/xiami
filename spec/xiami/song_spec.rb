@@ -1,4 +1,3 @@
-# coding: utf-8
 require "spec_helper"
 
 module Xiami
@@ -12,6 +11,18 @@ module Xiami
     it { is_expected.to respond_to :album_name }
 
     it { is_expected.to respond_to :lyrics_url }
+
+    describe 'class methods' do
+      subject { Song }
+
+      it { is_expected.to respond_to :parse_lyrics! }
+
+      describe '.parse_lyrics!' do
+        it 'parse content of the lyrics' do
+          expect(subject.parse_lyrics!(1769706099)).to match(/Last Flowers/)
+        end
+      end
+    end
 
     describe '#fetch' do
       it 'parses data' do

@@ -29,8 +29,6 @@ module Xiami
 
         song.id = id
 
-        song.lyrics_url = parse_lyrics_info!(id) rescue nil
-
         song.fetch_all_album_arts!
 
         song
@@ -52,6 +50,12 @@ module Xiami
         xml = HTTPClient.get_content("http://www.xiami.com/song/playlist/id/#{id}")
 
         Parser::LyricsXMLParser.parse(xml)
+      end
+
+      def parse_lyrics!(id)
+        url = parse_lyrics_info!(id)
+
+        HTTPClient.get_content(url)
       end
     end
 

@@ -35,5 +35,8 @@ unless ENV['REAL_HTTP']
   stub_request(:any, song_pattern).to_return(song_handler)
 
   images_handler = lambda { |request| { body: fixture(request.uri.path.match(/(.+)\.jpg$/)[1], 'jpg') } }
-  stub_request(:any, /img\.xiami\.net/).to_return(images_handler)
+  stub_request(:any, /img\.xiami\.net\/images/).to_return(images_handler)
+
+  lyrics_lrc_handler = lambda { |request| { body: fixture('lyrics/' + request.uri.path.match(/(\d+)_.+\.lrc$/)[1], 'lrc') } }
+  stub_request(:any, /img\.xiami\.net\/lyric/).to_return(lyrics_lrc_handler)
 end
