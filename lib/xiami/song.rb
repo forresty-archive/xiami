@@ -11,6 +11,7 @@ module Xiami
     attribute :temporary_url, String
     attribute :artist,        Artist
     attribute :album,         'Xiami::Album'
+    attribute :lyrics_url,    String
 
     class << self
       def search(query)
@@ -28,6 +29,8 @@ module Xiami
 
         song.id = id
 
+        song.lyrics_url = parse_lyrics_info!(id) rescue nil
+
         song.fetch_all_album_arts!
 
         song
@@ -43,6 +46,12 @@ module Xiami
         xml = HTTPClient.get_content("http://www.xiami.com/widget/xml-single/uid/0/sid/#{id}")
 
         Parser::SongXMLParser.parse(xml)
+      end
+
+      def parse_lyrics_info!(id)
+        xml = HTTPClient.get_content("http://www.xiami.com/song/playlist/id/#{id}")
+
+        Parser::LyricsXMLParser.parse(xml)
       end
     end
 

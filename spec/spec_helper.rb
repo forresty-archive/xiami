@@ -21,8 +21,10 @@ unless ENV['REAL_HTTP']
   include WebMock::API
 
   song_xml_pattern = /http:\/\/www\.xiami\.com\/widget\/xml-single\/uid\/0\/sid\/(\d+)/
-
   stub_request(:any, song_xml_pattern).to_return(lambda { |request| { body: fixture('songs/' + request.uri.path.match(/(\d+)$/)[0]) } })
+
+  lyrics_xml_pattern = /http:\/\/www\.xiami\.com\/song\/playlist\/id\/(\d+)/
+  stub_request(:any, lyrics_xml_pattern).to_return(lambda { |request| { body: fixture('lyrics/' + request.uri.path.match(/(\d+)$/)[0]) } })
 
   album_pattern = /http:\/\/www\.xiami\.com\/album\/(\d+)/
   album_handler = lambda { |request| { body: fixture('albums/' + request.uri.path.match(/(\d+)$/)[0], 'html') } }

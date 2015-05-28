@@ -11,6 +11,8 @@ module Xiami
     it { is_expected.to respond_to :artist_name }
     it { is_expected.to respond_to :album_name }
 
+    it { is_expected.to respond_to :lyrics_url }
+
     describe '#fetch' do
       it 'parses data' do
         song = Song.fetch('http://www.xiami.com/song/1773357685')
