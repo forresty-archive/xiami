@@ -86,6 +86,54 @@ Xiami::Song.search 'Radiohead'
   :album=>"《Pablo Honey》"}]
 ```
 
+```ruby
+Xiami::Song.search_all 'dido'
+
+[{:id=>1412106, :title=>"Thank You", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1412111, :title=>"My Life", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1412204, :title=>"Life for Rent", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>1769019622, :title=>"Summer", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>1238956, :title=>"Stan", :artist=>"Eminem(Eminem;Dido)", :album=>"《The Marshall Mathers LP》"},
+ {:id=>1412202, :title=>"White Flag", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>1412211, :title=>"This Land Is Mine", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>3394860, :title=>"Don't Believe In Love", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>3394861, :title=>"Quiet Times", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>1412101, :title=>"Here with Me", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1771573992, :title=>"No Freedom", :artist=>"Dido", :album=>"《Girl Who Got Away》"},
+ {:id=>2070881, :title=>"Thankyou", :artist=>"Dido", :album=>"《One Step Too Far》"},
+ {:id=>1773641840, :title=>"Thank You (Acoustic)", :artist=>"Dido", :album=>"《Thank You (Acoustic)》"},
+ {:id=>2070875, :title=>"Stan", :artist=>"Dido", :album=>"《One Step Too Far》"},
+ {:id=>1412110, :title=>"I'm No Angel", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1769665731, :title=>"Paris", :artist=>"Dido", :album=>"《White Flag》"},
+ {:id=>1771528775, :title=>"Let Us Move On", :artist=>"Dido(Dido;Kendrick Lamar)", :album=>"《Girl Who Got Away》"},
+ {:id=>1769023351, :title=>"Christmas Day", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>3394867, :title=>"The Day Before The Day", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>2088107, :title=>"Stan", :artist=>"Eminem(Eminem;Dido)", :album=>"《Curtain Call: The Hits》"},
+ {:id=>195909, :title=>"Don't You Trust Me?", :artist=>"2Pac(2Pac;Dido)", :album=>"《Loyal To The Game》"},
+ {:id=>1771698918, :title=>"Quiet Times (Acoustic)", :artist=>"Dido", :album=>"《No Freedom》"},
+ {:id=>1771574000, :title=>"Happy New Year", :artist=>"Dido", :album=>"《Girl Who Got Away》"},
+ {:id=>3394865, :title=>"Look No Further", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>1412212, :title=>"See the Sun / Closer", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>1412102, :title=>"Hunter", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>3394869, :title=>"Burnin Love", :artist=>"Dido(Dido;Citizen Cope)", :album=>"《Safe Trip Home》"},
+ {:id=>1771573996, :title=>"End Of Night", :artist=>"Dido", :album=>"《Girl Who Got Away》"},
+ {:id=>1771600486, :title=>"No Freedom", :artist=>"Dido", :album=>"《No Freedom》"},
+ {:id=>1412103, :title=>"Don't Think of Me", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1772329745, :title=>"Thank You", :artist=>"Dido", :album=>"《Greatest Hits》"},
+ {:id=>1772288720, :title=>"NYC", :artist=>"Dido", :album=>"《Greatest Hits》"},
+ {:id=>1412209, :title=>"Sand in My Shoes", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>1772329748, :title=>"Life for Rent", :artist=>"Dido", :album=>"《Greatest Hits》"},
+ {:id=>3416303, :title=>"Here With Me", :artist=>"Soundtrack(Dido)", :album=>"《Love Actually (The Original Soundtrack)》"},
+ {:id=>1412104, :title=>"My Lover's Gone", :artist=>"Dido", :album=>"《No Angel》"},
+ {:id=>1412210, :title=>"Do You Have a Little Time", :artist=>"Dido", :album=>"《Life for Rent》"},
+ {:id=>1771573993, :title=>"Girl Who Got Away", :artist=>"Dido", :album=>"《Girl Who Got Away》"},
+ {:id=>1772329744, :title=>"Here with Me", :artist=>"Dido", :album=>"《Greatest Hits》"},
+ {:id=>3394862, :title=>"Never Want To Say It's Love", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>3394864, :title=>"It Comes And It Goes", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+ {:id=>3394863, :title=>"Grafton Street", :artist=>"Dido", :album=>"《Safe Trip Home》"},
+...
+```
+
 ### Fetch song
 
 ```ruby

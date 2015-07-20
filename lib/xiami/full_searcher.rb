@@ -3,17 +3,18 @@ require_relative "http_client"
 require 'virtus'
 
 module Xiami
-  class Searcher
+  class FullSearcher
     include Virtus::Model
 
     attribute :query, String
 
     def search
-      Xiami::Parser::SongSearchHTMLParser.parse html_content
+      parser_class = Xiami::Parser::SongSearchHTMLParser
+      pages.map {|content| parser_class.parse content}.flatten
     end
 
-    def html_content
-      Xiami::Service::FetchXiamiQuery.call(query: query)
+    def pages
+      Xiami::Service::FetchXiamiSongSearch.call(query: query)
     end
 
     module ClassMethods

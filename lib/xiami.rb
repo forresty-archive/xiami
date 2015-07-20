@@ -4,6 +4,7 @@ require_relative "xiami/http_client"
 require_relative "xiami/services"
 require_relative 'xiami/parsers'
 require_relative 'xiami/searcher'
+require_relative 'xiami/full_searcher'
 require_relative 'xiami/cover_fetcher'
 
 require_relative "xiami/album"
