@@ -18,6 +18,10 @@ module Xiami
         Searcher.search(query: query)
       end
 
+      def search_all(query)
+        FullSearcher.search(query: query)
+      end
+
       def fetch(song_url)
         song_id = song_url.match(/song\/([0-9]+)/)[1] rescue song_url
 
