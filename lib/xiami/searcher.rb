@@ -9,7 +9,7 @@ module Xiami
     attribute :query, String
 
     def search
-      Xiami::Parsers::SongSearchHTMLParser.parse html_content
+      Xiami::Parser::SongSearchHTMLParser.parse html_content
     end
 
     def html_content

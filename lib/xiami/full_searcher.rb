@@ -9,7 +9,7 @@ module Xiami
     attribute :query, String
 
     def search
-      parser_class = Xiami::Parsers::SongSearchHTMLParser
+      parser_class = Xiami::Parser::SongSearchHTMLParser
       pages.map {|content| parser_class.parse content}.flatten
     end
 
